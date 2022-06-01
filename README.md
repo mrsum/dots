@@ -1,7 +1,7 @@
 # Dotfiles
 
 Instal:
-`bash
+```bash
   # mac os homebrew packages
   - brew install nvim
   - brew install tmux
@@ -10,19 +10,19 @@ Instal:
 
   # tmux plugin manager
   - $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-`
+```
 
 Copy:
-`
+```
   cp -r ./config ~/.config
-`
+```
 
 
 ### Commands:
 
 tmux:
 
-`
+```
   ctrl+a - leader keys
 
   <leader> c    - create new tab
@@ -35,5 +35,5 @@ tmux:
   <leader> Down
   <leader> Right
   <leader> Left
-`
+```
 
