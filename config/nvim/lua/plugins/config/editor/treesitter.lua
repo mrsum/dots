@@ -1,9 +1,9 @@
-local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
+local status_ok, plugin = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   return
 end
 
-treesitter.setup({
+plugin.setup({
   ensure_installed = { "tsx", "typescript", "lua", "json", "yaml" },
   context_commentstring = {
     enable = true

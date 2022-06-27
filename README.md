@@ -1,6 +1,6 @@
 # Dotfiles
 
-Instal:
+Install:
 ```bash
   # mac os homebrew packages
   - brew install nvim

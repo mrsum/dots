@@ -9,6 +9,5 @@ glb.tokyonight_transparent_sidebar  = true
 glb.tokyonight_dark_sidebar         = false
 glb.tokyonight_dark_float           = false
 
-
 cmd([[colorscheme tokyonight]])
 

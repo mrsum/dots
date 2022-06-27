@@ -37,32 +37,23 @@ packer.init {
 
 -- plugins
 return packer.startup(function(use)
-
-  -- run packer itself
   use ("wbthomason/packer.nvim")
-
-  -- colorscheme
   use ("folke/tokyonight.nvim")
-
-  -- colorizer
   use ("norcalli/nvim-colorizer.lua")
-
-  -- smooth scroll
   use ("karb94/neoscroll.nvim")
-
-  -- term
+  use ({
+    "neoclide/coc.nvim",
+    as = "coc",
+    branch = "release",
+  })
   use ("akinsho/toggleterm.nvim")
+  use ('gelguy/wilder.nvim')
 
-  -- coc
-  use ({ "neoclide/coc.nvim", branch = "release" })
-
-  -- lualine
+  -- lines
   use ({
     "nvim-lualine/lualine.nvim",
     requires = {"kyazdani42/nvim-web-devicons", opt = true}
   })
-
-  -- tabline
   use ({
     "kdheepak/tabline.nvim",
     requires = {
@@ -70,18 +61,10 @@ return packer.startup(function(use)
       { "kyazdani42/nvim-web-devicons", opt = true}
     }
   })
-
-  -- treesitter
   use ({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
-
-  -- git
-  use ("lewis6991/gitsigns.nvim")
-  use ("APZelos/blamer.nvim")
-
-  -- telescope
   use ({
     "nvim-telescope/telescope.nvim",
     requires = {
@@ -89,8 +72,6 @@ return packer.startup(function(use)
       "nvim-lua/popup.nvim",
     },
   })
-
-  -- nvim tree
   use ({
     "kyazdani42/nvim-tree.lua",
     requires = {
@@ -98,17 +79,13 @@ return packer.startup(function(use)
     },
     tag = "nightly"
   })
-
-  -- comment
+  use ("lewis6991/gitsigns.nvim")
+  use ("APZelos/blamer.nvim")
   use ("numToStr/Comment.nvim")
-
-  -- code
   use ("maxmellon/vim-jsx-pretty")
   use ("lukas-reineke/indent-blankline.nvim")
   use ("gpanders/editorconfig.nvim")
   use ("windwp/nvim-autopairs")
-
-  -- surround
   use ("ur4ltz/surround.nvim")
 
    if PACKER_BOOTSTRAP then

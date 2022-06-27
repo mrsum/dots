@@ -1,6 +1,5 @@
-local present, telescope = pcall(require, "telescope")
-
-if not present then
+local status_ok, plugin = pcall(require, "telescope")
+if not status_ok then
    return
 end
 
@@ -63,11 +62,11 @@ local options = {
 }
 
 -- check for any override
-telescope.setup(options)
+plugin.setup(options)
 
 -- load extensions
 pcall(function()
   for _, ext in ipairs(options.extensions_list) do
-    telescope.load_extension(ext)
+    plugin.load_extension(ext)
   end
 end)

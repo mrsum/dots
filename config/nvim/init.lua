@@ -3,15 +3,15 @@ local g = vim.g
 -- global
 g.mapleader = " "
 
--- settings
-require("utils")
-require("options")
+require("core.utils")
+require("core.options")
+require("core.colors")
 
 -- plugins list
-require("plugins")
+require("plugins.list")
 
--- plugins configs
+-- plugins config
 require("plugins.config")
 
--- keymaps
-require("keymaps")
+require("core.keymaps")
+

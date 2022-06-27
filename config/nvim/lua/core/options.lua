@@ -40,11 +40,10 @@ local options = {
 
 local global_options = {
   blamer_enabled = 1,
-  blamer_delay = 200,
-  blamer_prefix = " ",
+  blamer_delay = 1500,
+  blamer_prefix = "  ",
 }
 
---
 vim.opt.shortmess:append "c"
 
 -- set vim.opt.*

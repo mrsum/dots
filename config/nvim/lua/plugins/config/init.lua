@@ -1,21 +1,19 @@
--- plugins.init --
+-- editor
+require("plugins.config.editor.autopairs")
+require("plugins.config.editor.blankline")
+require("plugins.config.editor.coc")
+require("plugins.config.editor.comment")
+require("plugins.config.editor.gitsigns")
+require("plugins.config.editor.surround")
+require("plugins.config.editor.treesitter")
+
 -- ui
-require("plugins.config.colors")
-require("plugins.config.icons")
-require("plugins.config.neoscroll")
-require("plugins.config.lualine")
-require("plugins.config.gitsigns")
-require("plugins.config.toggleterm")
-require("plugins.config.tabline")
-require("plugins.config.colorizer")
-require("plugins.config.comment")
-
--- code
-require("plugins.config.treesitter")
-require("plugins.config.coc")
-require("plugins.config.autopairs")
-require("plugins.config.indent_blankline")
-
--- files and explore
-require("plugins.config.nvimtree")
-require("plugins.config.telescope")
+require("plugins.config.ui.colorizer")
+require("plugins.config.ui.icons")
+require("plugins.config.ui.lualine")
+require("plugins.config.ui.neoscroll")
+require("plugins.config.ui.nvimtree")
+require("plugins.config.ui.tabline")
+require("plugins.config.ui.telescope")
+require("plugins.config.ui.toggleterm")
+require("plugins.config.ui.wilder")

@@ -1,6 +1,8 @@
 {
   "prettier.requireConfig": true,
 
+  "extensions": ["coc-tsx"],
+  "coc.extensionUpdateCheck": true,
   "coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json"],
@@ -101,5 +103,6 @@
     "event": "",
     "operator": "Ψ",
     "typeParameter": ""
-  }
+  },
+  "snippets.ultisnips.enable": false
 }

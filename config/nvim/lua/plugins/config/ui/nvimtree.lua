@@ -3,7 +3,6 @@ if not status_ok then
   return
 end
 
-
 nvimtree.setup({
   update_cwd = true,
   open_on_tab = true,
