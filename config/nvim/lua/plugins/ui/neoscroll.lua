@@ -1,11 +1,11 @@
 local setup, neoscroll = pcall(require, "neoscroll")
 if not setup then
-	return
+  return
 end
 
 local setup_config, config = pcall(require, "neoscroll.config")
 if not setup_config then
-	return
+  return
 end
 
 local t = {}

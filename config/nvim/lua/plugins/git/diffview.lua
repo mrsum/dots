@@ -1,7 +1,6 @@
 local setup, diffview = pcall(require, "diffview")
 if not setup then
-	return
+  return
 end
 
 diffview.setup({})
-

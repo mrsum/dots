@@ -1,6 +1,6 @@
 local setup, autoclose = pcall(require, "autoclose")
 if not setup then
-	return
+  return
 end
 
 autoclose.setup({})

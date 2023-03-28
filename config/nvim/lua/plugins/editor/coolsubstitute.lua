@@ -1,8 +1,8 @@
 local setup, cs = pcall(require, "cool-substitute")
 if not setup then
-	return
+  return
 end
 
 cs.setup({
-	setup_keybindings = true,
+  setup_keybindings = true,
 })

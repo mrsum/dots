@@ -1,6 +1,6 @@
 local setup, blamer = pcall(require, "blamer")
 if not setup then
-	return
+  return
 end
 
 blamer.setup({})
