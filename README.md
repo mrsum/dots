@@ -1,5 +1,7 @@
 # Dotfiles
 
+![Dotfiles](image.png)
+
 Install:
 
 ```bash
