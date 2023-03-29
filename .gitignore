@@ -1,2 +1,2 @@
 config/tmux/plugins
-*.json
+lazy-lock.json
