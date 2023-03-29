@@ -18,6 +18,12 @@ Copy:
   cp -r ./config ~/.config
 ```
 
+Or create symlink
+
+```
+ln -s ~/path/to/repo ~/.config
+```
+
 ### Commands:
 
 tmux:
