@@ -24,7 +24,7 @@ saga.setup({
     auto_close = true,
     custom_sort = nil,
     keys = {
-      jump = "<CR>",
+      expand_or_jump = "<CR>",
       expand_collapse = "u",
       quit = "q",
     },

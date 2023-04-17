@@ -78,7 +78,7 @@ local plugins = {
   { "jose-elias-alvarez/typescript.nvim" },
   {
     "glepnir/lspsaga.nvim",
-    event = "BufRead",
+    event = "LspAttach",
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
       { "nvim-treesitter/nvim-treesitter" },
