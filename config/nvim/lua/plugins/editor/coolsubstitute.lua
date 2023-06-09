@@ -1,8 +1,8 @@
-local setup, cs = pcall(require, "cool-substitute")
-if not setup then
+local status, plugin = pcall(require, "cool-substitute")
+if not status then
   return
 end
 
-cs.setup({
+plugin.setup({
   setup_keybindings = true,
 })

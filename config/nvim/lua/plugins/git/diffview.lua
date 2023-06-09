@@ -1,6 +1,6 @@
-local setup, diffview = pcall(require, "diffview")
-if not setup then
+local status, plugin = pcall(require, "diffview")
+if not status then
   return
 end
 
-diffview.setup({})
+plugin.setup({})

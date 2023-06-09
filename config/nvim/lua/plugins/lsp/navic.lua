@@ -1,6 +1,6 @@
-local setup, navic = pcall(require, "nvim-navic")
-if not setup then
+local status, plugin = pcall(require, "nvim-navic")
+if not status then
   return
 end
 
-navic.setup({})
+plugin.setup({})

@@ -1,6 +1,6 @@
-local setup, autoclose = pcall(require, "autoclose")
-if not setup then
+local status, plugin = pcall(require, "autoclose")
+if not status then
   return
 end
 
-autoclose.setup({})
+plugin.setup({})

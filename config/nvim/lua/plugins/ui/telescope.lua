@@ -8,17 +8,22 @@ if not actions_setup then
   return
 end
 
-telescope.load_extension("fzf")
-
 telescope.setup({
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    },
+  },
   defaults = {
-    pickers = {
-      find_files = {
-        theme = "dropdown",
-      },
+    file_ignore_patterns = {
+      "node_modules",
     },
     mappings = {
       i = {
+        -- ["<CR>"] = actions.select_vertical,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -26,3 +31,5 @@ telescope.setup({
     },
   },
 })
+
+telescope.load_extension("fzf")

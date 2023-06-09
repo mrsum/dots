@@ -50,7 +50,7 @@ local normal_mode = {
   ["<S-Left>"] = { "<C-w>h", "Go to left split" },
 
   -- tabs
-  ["<C-o>"] = { "<cmd>$tabnew<cr>", "Open tab" },
+  ["<C-t>"] = { "<cmd>$tabnew<cr>", "New tab" },
   ["<C-w>"] = { "<cmd>tabclose<cr>", "Close tab" },
   ["<Tab>"] = { "<cmd>tabn<cr>", "Next tab" },
   ["<S-Tab>"] = { "<cmd>tabp<cr>", "Prev tab" },
@@ -63,12 +63,14 @@ local normal_mode = {
 local insert_mode = {
   mode = { "i" },
 
+  --
   ["<C-s>"] = { "<esc> :w<cr>", "[S]ave file" },
 }
 
 local visual_mode = {
   mode = { "v" },
 
+  --
   ["<"] = { "<gv", "Move left" },
   [">"] = { ">gv", "Move right" },
 }

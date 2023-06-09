@@ -1,16 +1,3 @@
-local lang_list = {
-  "lua_ls",
-  "tsserver",
-  "html",
-  "cssls",
-}
-
-local linter_list = {
-  "stylua",
-  "prettier",
-  "eslint_d",
-}
-
 local mason_status, mason = pcall(require, "mason")
 if not mason_status then
   return
@@ -25,6 +12,19 @@ local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
 if not mason_null_ls_status then
   return
 end
+
+local lang_list = {
+  "lua_ls",
+  "tsserver",
+  "html",
+  "cssls",
+}
+
+local linter_list = {
+  "stylua",
+  "prettier",
+  "eslint_d",
+}
 
 mason.setup()
 

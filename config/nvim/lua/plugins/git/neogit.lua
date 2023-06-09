@@ -1,13 +1,15 @@
-local setup, neogit = pcall(require, "neogit")
-if not setup then
+local status, plugin = pcall(require, "neogit")
+if not status then
   return
 end
 
-neogit.setup({
+plugin.setup({
   signs = {
+    hunk = { "", "" },
     section = { "", "" },
     item = { "", "" },
-    hunk = { "", "" },
   },
-  integrations = { diffview = true },
+  integrations = {
+    diffview = true,
+  },
 })

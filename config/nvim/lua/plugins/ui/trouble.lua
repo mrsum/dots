@@ -1,18 +1,34 @@
-local status, trouble = pcall(require, "trouble")
+local status, plugin = pcall(require, "trouble")
 if not status then
   return
 end
 
-trouble.setup({
-  position = "right",
-  height = 10,
+plugin.setup({
   width = 50,
+  height = 10,
   icons = true,
-  mode = "workspace_diagnostics",
-  fold_open = "",
-  fold_closed = "",
   group = true,
   padding = true,
+  position = "right",
+  fold_open = "",
+  fold_closed = "",
+  indent_lines = true,
+  auto_open = false,
+  auto_close = false,
+  auto_preview = true,
+  auto_fold = false,
+  auto_jump = {
+    "lsp_definitions",
+  },
+  mode = "workspace_diagnostics",
+  use_diagnostic_signs = true,
+  signs = {
+    error = "",
+    warning = "",
+    hint = "",
+    information = "",
+    other = "﫠",
+  },
   action_keys = {
     close = "q",
     cancel = "<esc>",
@@ -32,18 +48,4 @@ trouble.setup({
     previous = "k",
     next = "j",
   },
-  indent_lines = true,
-  auto_open = false,
-  auto_close = false,
-  auto_preview = true,
-  auto_fold = false,
-  auto_jump = { "lsp_definitions" },
-  signs = {
-    error = "",
-    warning = "",
-    hint = "",
-    information = "",
-    other = "﫠",
-  },
-  use_diagnostic_signs = true,
 })

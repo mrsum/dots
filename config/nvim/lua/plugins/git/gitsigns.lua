@@ -1,6 +1,6 @@
-local setup, gitsigns = pcall(require, "gitsigns")
-if not setup then
+local status, plugin = pcall(require, "gitsigns")
+if not status then
   return
 end
 
-gitsigns.setup({})
+plugin.setup({})

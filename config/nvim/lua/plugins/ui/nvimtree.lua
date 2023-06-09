@@ -1,5 +1,5 @@
-local setup, tree = pcall(require, "nvim-tree")
-if not setup then
+local status, plugin = pcall(require, "nvim-tree")
+if not status then
   return
 end
 
@@ -8,9 +8,10 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
-tree.setup({
+plugin.setup({
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
+
   update_focused_file = {
     enable = true,
     update_root = true,

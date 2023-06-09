@@ -1,5 +1,5 @@
-local setup, tabby = pcall(require, "tabby.tabline")
-if not setup then
+local status, plugin = pcall(require, "tabby.tabline")
+if not status then
   return
 end
 
@@ -12,7 +12,7 @@ local theme = {
   current_tab = "TabLineSel",
 }
 
-tabby.set(function(line)
+plugin.set(function(line)
   return {
     line.tabs().foreach(function(tab)
       local hl = tab.is_current() and theme.current_tab or theme.tail

@@ -1,9 +1,9 @@
-local saga_status, saga = pcall(require, "lspsaga")
-if not saga_status then
+local status, plugin = pcall(require, "lspsaga")
+if not status then
   return
 end
 
-saga.setup({
+plugin.setup({
   symbol_in_winbar = {
     enable = false,
   },

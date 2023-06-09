@@ -16,13 +16,13 @@ Install:
 
 Copy:
 
-```
+```bash
 cp -r ./config ~/.config
 ```
 
 Or create symlink
 
-```
+```bash
 ln -s ~/path/to/repo/config ~/.config
 ```
 
@@ -30,7 +30,7 @@ ln -s ~/path/to/repo/config ~/.config
 
 tmux:
 
-```
+```bash
 ctrl+a - leader keys
 
 <leader> c    - create new tab
@@ -43,4 +43,11 @@ ctrl+a - leader keys
 <leader> Down
 <leader> Right
 <leader> Left
+```
+
+### Run:
+
+```bash
+nvim
+
 ```

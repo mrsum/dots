@@ -1,6 +1,6 @@
-local setup, blamer = pcall(require, "blamer")
-if not setup then
+local status, plugin = pcall(require, "blamer")
+if not status then
   return
 end
 
-blamer.setup({})
+plugin.setup({})

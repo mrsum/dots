@@ -1,9 +1,9 @@
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
+local status, plugin = pcall(require, "nvim-treesitter.configs")
 if not status then
   return
 end
 
-local ts_parser_list = {
+local list = {
   "json",
   "javascript",
   "typescript",
@@ -24,12 +24,12 @@ local ts_parser_list = {
   "gitcommit",
 }
 
-treesitter.setup({
+plugin.setup({
   highlight = {
     enable = true,
   },
   indent = { enable = true },
   autotag = { enable = true },
-  ensure_installed = ts_parser_list,
+  ensure_installed = list,
   auto_install = true,
 })

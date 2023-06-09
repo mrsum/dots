@@ -8,9 +8,9 @@ if not setup_config then
   return
 end
 
-local t = {}
-
 neoscroll.setup()
+
+local t = {}
 
 t["<C-Up>"] = { "scroll", { "-vim.wo.scroll", "true", "150" } }
 t["<C-Down>"] = { "scroll", { "vim.wo.scroll", "true", "150" } }

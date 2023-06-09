@@ -1,9 +1,9 @@
-local setup, colorizer = pcall(require, "colorizer")
-if not setup then
+local status, plugin = pcall(require, "colorizer")
+if not status then
   return
 end
 
-colorizer.setup({
+plugin.setup({
   filetypes = { "*" },
   user_default_options = {
     RGB = true,
@@ -17,7 +17,12 @@ colorizer.setup({
     css_fn = false,
     mode = "background",
     tailwind = false,
-    sass = { enable = false, parsers = { "css" } },
+    sass = {
+      enable = false,
+      parsers = {
+        "css",
+      },
+    },
     virtualtext = "■",
     always_update = false,
   },

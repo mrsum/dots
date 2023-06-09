@@ -1,9 +1,9 @@
-local setup, cursorline = pcall(require, "nvim-cursorliner")
-if not setup then
+local status, plugin = pcall(require, "nvim-cursorliner")
+if not status then
   return
 end
 
-cursorline.setup({
+plugin.setup({
   cursorline = {
     enable = true,
   },

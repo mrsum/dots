@@ -1,6 +1,6 @@
-local setup, blankline = pcall(require, "indent_blankline")
-if not setup then
+local status, plugin = pcall(require, "indent_blankline")
+if not status then
   return
 end
 
-blankline.setup({})
+plugin.setup({})

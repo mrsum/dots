@@ -3,12 +3,14 @@ if not setup then
   return
 end
 
-wilder.setup({ modes = { ":", "/", "?" } })
+wilder.setup({
+  modes = { ":", "/", "?" },
+})
 
 wilder.set_option("pipeline", {
   wilder.branch(
+
     wilder.python_file_finder_pipeline({
-      -- search file via fd
       file_command = function(ctx, arg)
         if string.find(arg, ".") ~= nil then
           return { "fd", "-tf", "-H" }
@@ -19,6 +21,7 @@ wilder.set_option("pipeline", {
       dir_command = { "fd", "-td" },
       filters = { "fuzzy_filter", "difflib_sorter" },
     }),
+
     wilder.substitute_pipeline({
       pipeline = wilder.python_search_pipeline({
         skip_cmdtype_check = 1,
@@ -27,12 +30,15 @@ wilder.set_option("pipeline", {
         }),
       }),
     }),
+
     wilder.cmdline_pipeline({
       fuzzy = 1,
       fuzzy_filter = wilder.lua_fzy_filter(),
       debounce = 10,
     }),
+
     wilder.vim_search_pipeline(),
+
     wilder.python_search_pipeline({
       pattern = wilder.python_fuzzy_pattern({
         start_at_boundary = 0,

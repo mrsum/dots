@@ -162,6 +162,7 @@ component.lsp = {
     end
     return ""
   end,
+
   hl = function()
     local progress = vim.lsp.util.get_progress_messages()[1]
     return {
@@ -233,6 +234,7 @@ component.scroll_bar = {
     end
     return position
   end,
+
   hl = function()
     local position = math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
     local fg
@@ -259,7 +261,6 @@ component.scroll_bar = {
 }
 
 local left = {}
-
 local middle = {}
 local right = {
   component.vim_mode,
