@@ -2,7 +2,7 @@
 
 ![Dotfiles](image.png)
 
-Install:
+#### Install:
 
 ```bash
 # mac os homebrew packages
@@ -14,7 +14,7 @@ Install:
 - $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-Copy:
+#### Copy:
 
 ```bash
 cp -r ./config ~/.config
@@ -26,7 +26,7 @@ Or create symlink
 ln -s ~/path/to/repo/config ~/.config
 ```
 
-### Commands:
+#### Commands:
 
 tmux:
 
@@ -45,7 +45,7 @@ ctrl+a - leader keys
 <leader> Left
 ```
 
-### Run:
+#### Run:
 
 ```bash
 nvim
