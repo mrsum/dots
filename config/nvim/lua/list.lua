@@ -43,7 +43,7 @@ local plugins = {
   },
 
   -- git
-  { "APZelos/blamer.nvim" },
+  { "f-person/git-blame.nvim" },
   { "lewis6991/gitsigns.nvim" },
   { "TimUntersberger/neogit" },
   { "sindrets/diffview.nvim" },

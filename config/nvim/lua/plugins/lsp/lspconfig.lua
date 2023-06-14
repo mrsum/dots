@@ -1,10 +1,10 @@
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
+local navic_setup, navic = pcall(require, "nvim-navic")
+if not navic_setup then
   return
 end
 
-local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not cmp_nvim_lsp_status then
+local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status then
   return
 end
 
@@ -13,8 +13,8 @@ if not typescript_setup then
   return
 end
 
-local navic_setup, navic = pcall(require, "nvim-navic")
-if not navic_setup then
+local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_nvim_lsp_status then
   return
 end
 
@@ -65,24 +65,24 @@ end
 
 typescript.setup({
   server = {
-    capabilities = capabilities,
     on_attach = on_attach,
+    capabilities = capabilities,
   },
 })
 
 lspconfig["html"].setup({
-  capabilities = capabilities,
   on_attach = on_attach,
+  capabilities = capabilities,
 })
 
 lspconfig["cssls"].setup({
-  capabilities = capabilities,
   on_attach = on_attach,
+  capabilities = capabilities,
 })
 
 lspconfig["lua_ls"].setup({
-  capabilities = capabilities,
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {

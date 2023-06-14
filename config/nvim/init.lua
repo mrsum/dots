@@ -43,7 +43,6 @@ require("plugins.lsp.barbecue")
 
 -- git.plugins
 require("plugins.git.gitsigns")
-require("plugins.git.blamer")
 require("plugins.git.diffview")
 require("plugins.git.neogit")
 

@@ -9,8 +9,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 plugin.setup({
-  sync_root_with_cwd = true,
   respect_buf_cwd = true,
+  sync_root_with_cwd = true,
 
   update_focused_file = {
     enable = true,

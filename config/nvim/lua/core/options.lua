@@ -37,9 +37,9 @@ local options = {
 }
 
 local global_options = {
-  blamer_delay = 500,
-  blamer_enabled = 1,
-  blamer_prefix = " | ",
+  gitblame_enabled = 1,
+  gitblame_message_template = "  <summary> • <date> • <author>",
+  gitblame_delay = 400,
 }
 
 vim.opt.shortmess:append("c")
