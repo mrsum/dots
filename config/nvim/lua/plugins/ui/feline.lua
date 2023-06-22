@@ -136,7 +136,7 @@ component.lsp = {
       return ""
     end
 
-    local progress = vim.lsp.util.get_progress_messages()[1]
+    local progress = vim.lsp.status()[1]
     if vim.o.columns < 120 then
       return ""
     end
@@ -164,7 +164,7 @@ component.lsp = {
   end,
 
   hl = function()
-    local progress = vim.lsp.util.get_progress_messages()[1]
+    local progress = vim.lsp.status()[1]
     return {
       fg = progress and "yellow" or "green",
       bg = "gray",

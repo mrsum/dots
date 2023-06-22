@@ -39,7 +39,7 @@ require("plugins.lsp.mason")
 require("plugins.lsp.lspsaga")
 require("plugins.lsp.lspconfig")
 require("plugins.lsp.null-ls")
-require("plugins.lsp.barbecue")
+require("plugins.lsp.dropbar")
 
 -- git.plugins
 require("plugins.git.gitsigns")

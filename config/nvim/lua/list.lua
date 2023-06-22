@@ -84,15 +84,7 @@ local plugins = {
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
+  { "Bekaboo/dropbar.nvim" },
 }
 
 require("lazy").setup(plugins)
