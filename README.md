@@ -2,6 +2,14 @@
 
 ![Dotfiles](image.png)
 
+#### Requirments:
+
+```bash
+NVIM v0.10.0-*
+```
+
+For [installation check](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
+
 #### Install:
 
 ```bash
