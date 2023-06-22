@@ -4,7 +4,11 @@ if not setup then
 end
 
 wilder.setup({
-  modes = { ":", "/", "?" },
+  modes = {
+    ":",
+    "/",
+    "?",
+  },
 })
 
 wilder.set_option("pipeline", {

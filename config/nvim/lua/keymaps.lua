@@ -11,6 +11,9 @@ end
 local normal_mode = {
   mode = { "n" },
 
+  -- Copy all
+  ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+
   -- jump mode
   ["s"] = { sj.run, "Start search in current file" },
   ["qq"] = { "<cmd>:q!<cr>", "Exit without savings" },
@@ -62,6 +65,9 @@ local normal_mode = {
 
 local insert_mode = {
   mode = { "i" },
+
+  ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
+  ["<C-e>"] = { "<End>", "End of line" },
 
   --
   ["<C-s>"] = { "<esc> :w<cr>", "[S]ave file" },

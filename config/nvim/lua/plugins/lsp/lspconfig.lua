@@ -1,8 +1,3 @@
-local navic_setup, navic = pcall(require, "nvim-navic")
-if not navic_setup then
-  return
-end
-
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
   return
@@ -42,10 +37,6 @@ local on_attach = function(client, bufnr)
     keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
     keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>")
     keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>")
-  end
-
-  if client.server_capabilities.documentSymbolProvider then
-    navic.attach(client, bufnr)
   end
 end
 

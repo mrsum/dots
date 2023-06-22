@@ -12,6 +12,7 @@ theme.setup({
     keywords = { "bold" },
     functions = { "italic" },
   },
+
   transparent_background = true,
   integrations = {
     mason = true,
@@ -19,22 +20,51 @@ theme.setup({
     nvimtree = false,
     dap = { enabled = true, enable_ui = true },
   },
+
   custom_highlights = function(colors)
     return {
-      PanelHeading = { fg = colors.lavender, style = { "bold", "italic" } },
+      PanelHeading = {
+        fg = colors.lavender,
+        style = { "bold", "italic" },
+      },
 
-      LazyH1 = { bg = "NONE", fg = colors.lavender, style = { "bold" } },
-      LazyButton = { bg = "NONE", fg = colors.overlay0 },
-      LazyButtonActive = { bg = "NONE", fg = colors.lavender, style = { " bold" } },
-      LazySpecial = { fg = colors.sapphire },
+      LazyH1 = {
+        bg = "NONE",
+        fg = colors.lavender,
+        style = { "bold" },
+      },
+      LazyButton = {
+        bg = "NONE",
+        fg = colors.overlay0,
+      },
+      LazyButtonActive = {
+        bg = "NONE",
+        fg = colors.lavender,
+        style = { " bold" },
+      },
+      LazySpecial = {
+        fg = colors.sapphire,
+      },
 
-      FloatBorder = { fg = colors.overlay1 },
-      TelescopeBorder = { fg = colors.overlay1 },
-      WhichKeyBorder = { fg = colors.overlay1 },
-      NeoTreeFloatBorder = { fg = colors.overlay1 },
-      LspInfoBorder = { fg = colors.overlay1 },
+      FloatBorder = {
+        fg = colors.overlay1,
+      },
+      TelescopeBorder = {
+        fg = colors.overlay1,
+      },
+      WhichKeyBorder = {
+        fg = colors.overlay1,
+      },
+      NeoTreeFloatBorder = {
+        fg = colors.overlay1,
+      },
+      LspInfoBorder = {
+        fg = colors.overlay1,
+      },
 
-      IndentBlanklineContextChar = { fg = colors.overlay0 },
+      IndentBlanklineContextChar = {
+        fg = colors.overlay0,
+      },
     }
   end,
 })
