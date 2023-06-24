@@ -39,7 +39,8 @@ ln -s ~/path/to/repo/config ~/.config
 tmux:
 
 ```bash
-ctrl+a - leader keys
+# keys
+# ctrl+a - leader keys
 
 <leader> c    - create new tab
 <leader> 0-9  - switch to tab

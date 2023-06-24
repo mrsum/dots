@@ -34,6 +34,8 @@ local options = {
   scrolloff = 10,
   sidescrolloff = 10,
   guifont = "FiraMono Nerd Font",
+  laststatus = 3,
+  splitkeep = "screen",
 }
 
 local global_options = {

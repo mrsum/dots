@@ -14,9 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- ui
   { "catppuccin/nvim", name = "catppuccin" },
-  { "NTBBloodbath/sweetie.nvim" },
   { "karb94/neoscroll.nvim" },
   { "nvim-lua/plenary.nvim" },
   { "nanozuki/tabby.nvim" },
@@ -49,21 +47,21 @@ local plugins = {
   { "sindrets/diffview.nvim" },
 
   -- editor
-  { "nvim-treesitter/nvim-treesitter" },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-path" },
-  { "L3MON4D3/LuaSnip" },
-  { "saadparwaiz1/cmp_luasnip" },
-  { "rafamadriz/friendly-snippets" },
-  { "numToStr/Comment.nvim" },
-  { "gpanders/editorconfig.nvim" },
-  { "lukas-reineke/indent-blankline.nvim" },
   { "windwp/nvim-autopairs" },
   { "windwp/nvim-ts-autotag" },
+  { "hrsh7th/cmp-path" },
+  { "L3MON4D3/LuaSnip" },
   { "NvChad/nvim-colorizer.lua" },
-  { "otavioschwanck/cool-substitute.nvim" },
+  { "numToStr/Comment.nvim" },
+  { "saadparwaiz1/cmp_luasnip" },
   { "woosaaahh/sj.nvim" },
+  { "rafamadriz/friendly-snippets" },
+  { "gpanders/editorconfig.nvim" },
+  { "nvim-treesitter/nvim-treesitter" },
+  { "lukas-reineke/indent-blankline.nvim" },
+  { "otavioschwanck/cool-substitute.nvim" },
   { "yamatsum/nvim-cursorline" },
   { "m4xshen/autoclose.nvim" },
 

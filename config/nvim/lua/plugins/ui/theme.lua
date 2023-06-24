@@ -12,7 +12,6 @@ theme.setup({
     keywords = { "bold" },
     functions = { "italic" },
   },
-
   transparent_background = true,
   integrations = {
     mason = true,

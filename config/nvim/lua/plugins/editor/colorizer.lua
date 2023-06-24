@@ -4,7 +4,10 @@ if not status then
 end
 
 plugin.setup({
-  filetypes = { "*" },
+  buftypes = {},
+  filetypes = {
+    "*",
+  },
   user_default_options = {
     RGB = true,
     RRGGBB = true,
@@ -17,14 +20,7 @@ plugin.setup({
     css_fn = false,
     mode = "background",
     tailwind = false,
-    sass = {
-      enable = false,
-      parsers = {
-        "css",
-      },
-    },
     virtualtext = "■",
     always_update = false,
   },
-  buftypes = {},
 })
