@@ -4,12 +4,13 @@ local Fonts = {}
 
 function Fonts.setup(config)
   config.font = wezterm.font_with_fallback({
-    "FiraCode Nerd Font Mono",
+    family = "FiraCode Nerd Font Mono",
+    weight = "Bold",
   })
-  config.font_size = 16
-  config.underline_thickness = "100%"
-  config.underline_position = "-3pt"
+
   config.line_height = 1.2
+  config.underline_position = "-3pt"
+  config.underline_thickness = "100%"
 end
 
 return Fonts

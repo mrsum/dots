@@ -14,6 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- ui
   { "catppuccin/nvim", name = "catppuccin" },
   { "karb94/neoscroll.nvim" },
   { "nvim-lua/plenary.nvim" },
@@ -28,7 +29,7 @@ local plugins = {
   { "folke/which-key.nvim" },
   { "folke/trouble.nvim" },
   { "nvim-tree/nvim-tree.lua" },
-  { "freddiehaddad/feline.nvim" },
+  { "windwp/windline.nvim" },
   {
     "gelguy/wilder.nvim",
     build = ":UpdateRemotePlugins",

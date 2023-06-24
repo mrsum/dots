@@ -14,12 +14,12 @@ require("list")
 require("plugins.ui.theme")
 
 -- ui.plugins
-require("plugins.ui.feline")
 require("plugins.ui.telescope")
 require("plugins.ui.tabby")
 require("plugins.ui.trouble")
 require("plugins.ui.nvimtree")
 require("plugins.ui.neoscroll")
+require("plugins.ui.windline")
 
 -- editor.plugins
 require("plugins.editor.treesitter")

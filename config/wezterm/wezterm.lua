@@ -1,8 +1,9 @@
-local wezterm = require("wezterm")
 local tab = require("tab")
 local theme = require("theme")
 local keys = require("keys")
 local fonts = require("fonts")
+
+local wezterm = require("wezterm")
 
 local config = {
   enable_wayland = false,
@@ -13,13 +14,13 @@ local config = {
   window_decorations = "NONE",
   window_close_confirmation = "NeverPrompt",
   window_padding = {
-    left = 10,
-    right = 10,
     top = 10,
     bottom = 10,
+    left = 10,
+    right = 10,
   },
+  initial_rows = 50,
   initial_cols = 180,
-  initial_rows = 55,
   inactive_pane_hsb = {
     saturation = 1.0,
     brightness = wezterm.GLOBAL.is_dark and 0.90 or 0.95,
