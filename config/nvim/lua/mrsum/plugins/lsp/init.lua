@@ -11,7 +11,7 @@ local lang_list = {
   "eslint",
   "graphql",
   "jsonls",
-  "yamlls"
+  "yamlls",
 }
 
 local linter_list = {

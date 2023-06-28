@@ -5,8 +5,7 @@ return {
   },
   event = "VeryLazy",
   config = function()
-
-  local setup, wk = pcall(require, "which-key")
+    local setup, wk = pcall(require, "which-key")
     if not setup then
       return
     end
