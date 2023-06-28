@@ -43,6 +43,7 @@ local plugins_list = {
   { import = "mrsum.plugins.editor.comment" },
   { import = "mrsum.plugins.editor.devicons" },
   { import = "mrsum.plugins.editor.gitsigns" },
+  { import = "mrsum.plugins.editor.statuscol" },
 
   -- git
   { import = "mrsum.plugins.git.diffview" },
