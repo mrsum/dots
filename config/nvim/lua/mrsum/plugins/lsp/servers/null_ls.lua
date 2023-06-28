@@ -1,48 +1,58 @@
-local _M = {}
-local null_ls = require("null-ls")
+return {
+  setup = function(on_attach, capabilities)
+    local status, null_ls = pcall(require, "null-ls")
+    if not status then
+      return
+    end
 
-local _include_root_file = function(...)
-  local files = { ... }
-  return function(utils)
-    return utils.root_has_file(files)
-  end
-end
+    local formatting = null_ls.builtins.formatting
+    local diagnostics = null_ls.builtins.diagnostics
+    local code_actions = null_ls.builtins.code_actions
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local _exclude_root_file = function(...)
-  local files = { ... }
-  return function(utils)
-    return not utils.root_has_file(files)
-  end
-end
+    null_ls.setup({
+      border = "rounded",
+      sources = {
+        formatting.stylua,
+        formatting.shfmt.with({
+          filetypes = { "sh", "bash", "zsh" },
+        }),
 
-local _formatting = null_ls.builtins.formatting
-local _diagnostics = null_ls.builtins.diagnostics
-local _code_actions = null_ls.builtins.code_actions
+        formatting.prettier,
+        formatting.stylua,
 
-_M.setup = function(on_attach)
-  null_ls.setup({
-    save_after_format = true,
-    border = "rounded",
-    default_timeout = 5000,
-    sources = {
-      _diagnostics.actionlint,
-      _diagnostics.alex,
-      _diagnostics.checkmake,
-      _diagnostics.hadolint,
-      _diagnostics.shellcheck,
-      _diagnostics.tidy,
-      _diagnostics.write_good,
+        diagnostics.actionlint,
+        diagnostics.alex,
+        diagnostics.checkmake,
+        diagnostics.hadolint,
+        diagnostics.shellcheck,
+        diagnostics.tidy,
+        diagnostics.write_good,
+        diagnostics.eslint_d.with({
+          condition = function(utils)
+            return utils.root_has_file(".eslintrc.json")
+          end,
+        }),
+        code_actions.shellcheck,
+      },
 
-      _formatting.prettierd,
-      _formatting.stylua,
-      _formatting.shfmt.with({
-        filetypes = { "sh", "bash", "zsh" },
-      }),
-
-      _code_actions.shellcheck,
-    },
-    on_attach = on_attach,
-  })
-end
-
-return _M
+      on_attach = function(current_client, bufnr)
+        if current_client.supports_method("textDocument/formatting") then
+          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({
+                filter = function(client)
+                  return client.name == "null-ls"
+                end,
+                bufnr = bufnr,
+              })
+            end,
+          })
+        end
+      end,
+    })
+  end,
+}

@@ -1,7 +1,12 @@
 return {
-  setup = function()
+  setup = function(lang_list)
     local lspconfig_status, lspconfig = pcall(require, "lspconfig")
     if not lspconfig_status then
+      return
+    end
+
+    local lspconfig_ui_status, lspconfig_ui = pcall(require, "lspconfig.ui.windows")
+    if not lspconfig_ui_status then
       return
     end
 
@@ -15,7 +20,56 @@ return {
       return
     end
 
+    local fn = vim.fn
+    local lsp = vim.lsp
     local keymap = vim.keymap
+    local diagnostic = vim.diagnostic
+
+    fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError", numhl = "" })
+    fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint", numhl = "" })
+    fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo", numhl = "" })
+    fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", numhl = "" })
+
+    diagnostic.config({
+      virtual_text = {
+        source = false,
+        prefix = vim.g.emoji and " 🐤" or " 󱙝",
+        format = function(diagnostic)
+          return string.format(
+            "%s%s ",
+            diagnostic.source and string.format("[%s]: ", diagnostic.source) or "",
+            diagnostic.message
+          )
+        end,
+      },
+      float = {
+        source = false,
+        border = "rounded",
+        format = function(diagnostic)
+          return string.format(
+            "%s%s ",
+            diagnostic.source and string.format("[%s]: ", diagnostic.source) or "",
+            diagnostic.message
+          )
+        end,
+      },
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
+    })
+
+    lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
+      border = "rounded",
+    })
+
+    lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, {
+      border = "rounded",
+    })
+
+    lspconfig_ui.default_options = {
+      border = "rounded",
+    }
 
     local on_attach = function(client, bufnr)
       local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -42,7 +96,12 @@ return {
       end
     end
 
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      vim.lsp.protocol.make_client_capabilities(),
+      require("cmp_nvim_lsp").default_capabilities()
+    )
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     local signs = {
       Error = " ",
@@ -56,39 +115,8 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    typescript.setup({
-      server = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-      },
-    })
-
-    lspconfig["html"].setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    lspconfig["cssls"].setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    lspconfig["lua_ls"].setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-            },
-          },
-        },
-      },
-    })
+    for _, server in ipairs(lang_list) do
+      require("mrsum.plugins.lsp.servers." .. server).setup(on_attach, capabilities)
+    end
   end,
 }

@@ -1,8 +1,17 @@
 local lang_list = {
-  "lua_ls",
-  "tsserver",
+  "null_ls",
   "html",
   "cssls",
+  "lua_ls",
+  "bashls",
+  "tsserver",
+  "cssmodules_ls",
+  "docker_compose_language_service",
+  "emmet_ls",
+  "eslint",
+  "graphql",
+  "jsonls",
+  "yamlls"
 }
 
 local linter_list = {
@@ -46,11 +55,6 @@ return {
       return
     end
 
-    local null_ls_status, null_ls = pcall(require, "mrsum.plugins.lsp.config.null-ls")
-    if not null_ls_status then
-      return
-    end
-
     local saga_status, saga = pcall(require, "mrsum.plugins.lsp.config.saga")
     if not saga_status then
       return
@@ -60,10 +64,7 @@ return {
     mason.setup(lang_list, linter_list)
 
     -- activate language server protocols
-    lsp.setup()
-
-    -- null ls (formatting and prettier)
-    null_ls.setup()
+    lsp.setup(lang_list)
 
     -- lsp saga
     saga.setup()

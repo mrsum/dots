@@ -49,6 +49,5 @@ return {
         edit = "<CR>",
       },
     })
-
-  end
+  end,
 }

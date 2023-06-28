@@ -25,5 +25,5 @@ return {
       ensure_installed = linter_list,
       automatic_installation = true,
     })
-  end
+  end,
 }
