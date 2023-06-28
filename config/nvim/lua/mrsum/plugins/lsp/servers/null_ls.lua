@@ -13,14 +13,14 @@ return {
     null_ls.setup({
       border = "rounded",
       sources = {
+        -- formattings section
         formatting.stylua,
+        formatting.prettier,
         formatting.shfmt.with({
           filetypes = { "sh", "bash", "zsh" },
         }),
 
-        formatting.prettier,
-        formatting.stylua,
-
+        -- diagnostic section
         diagnostics.actionlint,
         diagnostics.alex,
         diagnostics.checkmake,

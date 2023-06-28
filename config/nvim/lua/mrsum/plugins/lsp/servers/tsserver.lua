@@ -4,20 +4,21 @@ return {
 
     lspconfig.tsserver.setup({
       capabilities = capabilities,
-
+      single_file_support = false,
+      root_dir = lspconfig.util.root_pattern("package.json"),
       on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
         on_attach(client, bufnr)
       end,
-      root_dir = lspconfig.util.root_pattern("package.json"),
-      single_file_support = false,
       commands = {
         OrganizeImports = {
           function()
             vim.lsp.buf.execute_command({
               command = "_typescript.organizeImports",
-              arguments = { vim.api.nvim_buf_get_name(0) },
+              arguments = {
+                vim.api.nvim_buf_get_name(0),
+              },
               title = "Organize Imports",
             })
           end,
