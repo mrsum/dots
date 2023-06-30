@@ -2,7 +2,7 @@ live_config_reload: true
 
 # Window configs
 window:
-  opacity: 0.96
+  opacity: 0.98
   padding:
     x: 10
     y: 20

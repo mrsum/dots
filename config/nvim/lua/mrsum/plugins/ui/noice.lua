@@ -44,7 +44,7 @@ return {
       lsp_doc_border = true,
     },
     notify = {
-      enabled = false,
+      enabled = true,
     },
   },
   config = function()
