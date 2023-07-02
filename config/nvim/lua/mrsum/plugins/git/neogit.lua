@@ -1,5 +1,5 @@
 return {
-  "TimUntersberger/neogit",
+  "NeogitOrg/neogit",
   lazy = false,
   config = function()
     local status, plugin = pcall(require, "neogit")
