@@ -31,32 +31,24 @@ return {
     fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", numhl = "" })
 
     diagnostic.config({
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
       virtual_text = {
         source = false,
         prefix = vim.g.emoji and " 🐤" or " 󱙝",
-        format = function(diagnostic)
-          return string.format(
-            "%s%s ",
-            diagnostic.source and string.format("[%s]: ", diagnostic.source) or "",
-            diagnostic.message
-          )
+        format = function(diag)
+          return string.format("%s%s ", diag.source and string.format("[%s]: ", diag.source) or "", diag.message)
         end,
       },
       float = {
         source = false,
         border = "rounded",
-        format = function(diagnostic)
-          return string.format(
-            "%s%s ",
-            diagnostic.source and string.format("[%s]: ", diagnostic.source) or "",
-            diagnostic.message
-          )
+        format = function(diag)
+          return string.format("%s%s ", diag.source and string.format("[%s]: ", diag.source) or "", diag.message)
         end,
       },
-      signs = true,
-      underline = true,
-      update_in_insert = false,
-      severity_sort = true,
     })
 
     lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {

@@ -5,11 +5,15 @@ _autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
   end,
-  group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+  group = vim.api.nvim_create_augroup("YankHighlight", {
+    clear = true,
+  }),
 })
 
 _autocmd("VimResized", {
-  group = vim.api.nvim_create_augroup("ResizeSplit", { clear = true }),
+  group = vim.api.nvim_create_augroup("ResizeSplit", {
+    clear = true,
+  }),
   callback = function()
     vim.cmd("tabdo wincmd =")
   end,

@@ -40,7 +40,7 @@ local options = {
 
 local global_options = {
   gitblame_enabled = 1,
-  gitblame_message_template = "  <author> • <summary> • <date> •",
+  gitblame_message_template = "  <author> • <summary> • <date>",
   gitblame_delay = 400,
   Illuminate_delay = 0,
 }

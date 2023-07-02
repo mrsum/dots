@@ -9,13 +9,16 @@ return {
       symbol_in_winbar = {
         enable = false,
       },
+
       move_in_saga = {
         prev = "<C-k>",
         next = "<C-j>",
       },
+
       finder_action_keys = {
         open = "<CR>",
       },
+
       outline = {
         win_position = "right",
         win_with = "",
