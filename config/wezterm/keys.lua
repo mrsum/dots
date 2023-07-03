@@ -55,6 +55,7 @@ function Keys.setup(config)
         SplitHorizontal = { domain = "CurrentPaneDomain" },
       }),
     },
+
     {
       mods = "ALT|SHIFT",
       key = [[|]],
@@ -64,32 +65,43 @@ function Keys.setup(config)
         size = { Percent = 50 },
       }),
     },
+
     {
       mods = "ALT",
       key = [[-]],
       action = wezterm.action({
-        SplitVertical = { domain = "CurrentPaneDomain" },
+        SplitVertical = {
+          domain = "CurrentPaneDomain",
+        },
       }),
     },
+
     {
       mods = "ALT|SHIFT",
       key = [[_]],
       action = wezterm.action.SplitPane({
         top_level = true,
         direction = "Down",
-        size = { Percent = 50 },
+        size = {
+          Percent = 50,
+        },
       }),
     },
+
     {
       key = "n",
       mods = "ALT",
-      action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+      action = wezterm.action({
+        SpawnTab = "CurrentPaneDomain",
+      }),
     },
+
     {
       key = "Q",
       mods = "ALT",
       action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
     },
+
     { key = "q", mods = "ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
     { key = "z", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
     { key = "F11", mods = "", action = wezterm.action.ToggleFullScreen },

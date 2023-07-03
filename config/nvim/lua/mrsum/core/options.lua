@@ -47,12 +47,6 @@ local global_options = {
 
 vim.opt.shortmess:append("c")
 
-vim.filetype.add({
-  pattern = {
-    ["[jt]sconfig.*.json"] = "jsonc",
-  },
-})
-
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

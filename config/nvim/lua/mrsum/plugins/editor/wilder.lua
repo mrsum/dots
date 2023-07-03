@@ -69,7 +69,11 @@ return {
         },
         highlights = {
           border = "Normal",
-          accent = wilder.make_hl("WilderAccent", "Pmenu", { { a = 1 }, { a = 1 }, { foreground = "#f4468f" } }),
+          accent = wilder.make_hl("WilderAccent", "Pmenu", {
+            { a = 1 },
+            { a = 1 },
+            { foreground = "#f4468f" },
+          }),
         },
         border = "rounded",
         left = { " ", wilder.popupmenu_devicons() },
