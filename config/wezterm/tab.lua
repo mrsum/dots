@@ -45,10 +45,6 @@ local function get_process(tab)
       { Foreground = { Color = colors.rosewater } },
       { Text = "" },
     },
-    ["cargo"] = {
-      { Foreground = { Color = colors.peach } },
-      { Text = wezterm.nerdfonts.dev_rust },
-    },
     ["go"] = {
       { Foreground = { Color = colors.sapphire } },
       { Text = "" },

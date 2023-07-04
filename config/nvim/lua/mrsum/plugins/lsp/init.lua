@@ -1,17 +1,16 @@
 local lang_list = {
-  "null_ls",
   "html",
   "cssls",
   "lua_ls",
   "bashls",
-  "tsserver",
-  "cssmodules_ls",
-  "docker_compose_language_service",
-  "emmet_ls",
   "eslint",
   "graphql",
+  "null_ls",
   "jsonls",
   "yamlls",
+  "tsserver",
+  "emmet_ls",
+  "cssmodules_ls",
 }
 
 local linter_list = {
@@ -24,15 +23,11 @@ return {
   "williamboman/mason.nvim",
   lazy = false,
   build = ":MasonUpdate",
-  event = { "BufReadPre", "BufNewFile" },
+  event = {
+    "BufReadPre",
+    "BufNewFile",
+  },
   dependencies = {
-    { "williamboman/mason-lspconfig.nvim" },
-    { "jayp0521/mason-null-ls.nvim" },
-    { "neovim/nvim-lspconfig" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "onsails/lspkind.nvim" },
-    { "jose-elias-alvarez/null-ls.nvim" },
-    { "jose-elias-alvarez/typescript.nvim" },
     {
       "glepnir/lspsaga.nvim",
       event = "LspAttach",
@@ -41,7 +36,15 @@ return {
         { "nvim-treesitter/nvim-treesitter" },
       },
     },
-    "b0o/schemastore.nvim",
+
+    { "williamboman/mason-lspconfig.nvim" },
+    { "jayp0521/mason-null-ls.nvim" },
+    { "neovim/nvim-lspconfig" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "onsails/lspkind.nvim" },
+    { "jose-elias-alvarez/null-ls.nvim" },
+    { "jose-elias-alvarez/typescript.nvim" },
+    { "b0o/schemastore.nvim" },
   },
 
   config = function()

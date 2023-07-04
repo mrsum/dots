@@ -6,6 +6,19 @@ return {
     end
 
     plugin.setup({
+      ui = {
+        title = true,
+        border = "single",
+        winblend = 0,
+        expand = "",
+        collapse = "",
+        code_action = "💡",
+        incoming = " ",
+        outgoing = " ",
+        hover = " ",
+        kind = {},
+      },
+
       symbol_in_winbar = {
         enable = false,
       },

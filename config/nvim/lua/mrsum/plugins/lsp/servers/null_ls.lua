@@ -16,24 +16,11 @@ return {
         -- formattings section
         formatting.stylua,
         formatting.prettier,
-        formatting.shfmt.with({
-          filetypes = { "sh", "bash", "zsh" },
-        }),
-
-        -- diagnostic section
-        diagnostics.actionlint,
-        diagnostics.alex,
-        diagnostics.checkmake,
-        diagnostics.hadolint,
-        diagnostics.shellcheck,
-        diagnostics.tidy,
-        diagnostics.write_good,
         diagnostics.eslint_d.with({
           condition = function(utils)
             return utils.root_has_file(".eslintrc.json")
           end,
         }),
-        code_actions.shellcheck,
       },
 
       on_attach = function(current_client, bufnr)
