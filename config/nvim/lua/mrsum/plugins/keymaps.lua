@@ -65,6 +65,8 @@ return {
       ["<Tab>"] = { "<cmd>tabn<cr>", "Next tab" },
       ["<S-Tab>"] = { "<cmd>tabp<cr>", "Prev tab" },
 
+      ["<C-]>"] = { "<cmd>:Lspsaga term_toggle<cr>", "Toggle term" },
+
       -- plugins hotkeys
       ["<C-g>"] = { "<cmd>Neogit<cr>", "Open NeoGit" },
       ["<C-d>"] = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
