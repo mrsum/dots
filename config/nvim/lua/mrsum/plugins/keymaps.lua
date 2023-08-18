@@ -33,7 +33,7 @@ return {
       ["<C-s>"] = { "<cmd>:w<cr>", "Save file" },
       ["<C-q>"] = { "<cmd>:q!<cr>", "Quit" },
       ["<C-a>"] = { "ggVG", "Select all" },
-      ["<C-e>"] = { "<cmd>NeoTreeFocusToggle<cr>", "Toggle tree" },
+      ["<C-e>"] = { "<cmd>Neotree toggle<cr>", "Toggle tree" },
 
       -- telescope
       ["<S-T>"] = { "<cmd>Telescope help_tags<cr>", "Find tags" },
