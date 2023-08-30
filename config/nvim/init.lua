@@ -1,1 +1,1 @@
-require("mrsum")
+require("mrsum.nvim")
