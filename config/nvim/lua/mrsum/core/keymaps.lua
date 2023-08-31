@@ -16,6 +16,9 @@ return {
       -- jump mode
       ["qq"] = { "<cmd>:q!<cr>", "Exit without savings" },
 
+      -- neotree
+
+      ["<C-e>"] = { "<cmd>Neotree toggle<cr>", "Neotree toggle" },
       -- global keys
       ["<CR>"] = { "<cmd>noh<cr><cr>", "Clear highlights" },
       ["<C-s>"] = { "<cmd>:w<cr>", "Save file" },
