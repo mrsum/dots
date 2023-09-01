@@ -11,84 +11,113 @@ local lang_list = {
   "tsserver",
   "emmet_ls",
   "cssmodules_ls",
-}
-
-local linter_list = {
   "stylua",
   "prettier",
   "eslint_d",
 }
 
 return {
-  "VonHeikemen/lsp-zero.nvim",
+  "neovim/nvim-lspconfig",
   name = "_.mrsum.plugins.lsp",
-  branch = "v1.x",
   dependencies = {
     -- LSP
-    "neovim/nvim-lspconfig", -- Required
-    "williamboman/mason.nvim", -- Optional
+    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim", -- Optional
+    "nvimdev/guard.nvim",
 
     -- Custom
-    "jose-elias-alvarez/null-ls.nvim", -- NULL LS
-    "jay-babu/mason-null-ls.nvim", -- NULL LS + Mason Support
-    "glepnir/lspsaga.nvim", -- Better LSP UI
-    "folke/neodev.nvim", -- NeoDev LSP
-    "windwp/nvim-autopairs", -- Autopairs
-    "lukas-reineke/lsp-format.nvim", -- Autoformat on Save ASYNC
+    "folke/neodev.nvim",
+    "glepnir/lspsaga.nvim",
+    "lukas-reineke/lsp-format.nvim",
   },
 
   config = function()
-    local lsp = require("lsp-zero").preset({})
-    local null_ls = require("null-ls")
+    local lsp = require("lspconfig")
+    local ft = require("guard.filetype")
     local mason = require("mason")
+    local lspsaga = require("lspsaga")
     local mason_lsp_config = require("mason-lspconfig")
-    local mason_null_ls = require("mason-null-ls")
 
     -- install lsp language from list
-    mason.setup()
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    -- languages and linters
     mason_lsp_config.setup({
       ensure_installed = lang_list,
       automatic_installation = true,
     })
 
-    -- attach on lsp
-    lsp.on_attach(function(client, bufnr)
-      lsp.default_keymaps({ buffer = bufnr })
-    end)
-
-    -- define formatter
-    lsp.format_on_save({
-      format_opts = {
-        async = true,
-        timeout_ms = 10000,
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = {
+        prefix = "",
+        spacing = 0,
       },
-      servers = {
-        ["null-ls"] = {
-          "javascript",
-          "typescript",
-          "lua",
+      signs = true,
+      underline = true,
+    })
+
+    -- symbols for autocomplete
+    vim.lsp.protocol.CompletionItemKind = {
+      "   (Text) ",
+      "   (Method)",
+      "   (Function)",
+      "   (Constructor)",
+      " ﴲ  (Field)",
+      "[] (Variable)",
+      "   (Class)",
+      " ﰮ  (Interface)",
+      "   (Module)",
+      " 襁 (Property)",
+      "   (Unit)",
+      "   (Value)",
+      " 練 (Enum)",
+      "   (Keyword)",
+      "   (Snippet)",
+      "   (Color)",
+      "   (File)",
+      "   (Reference)",
+      "   (Folder)",
+      "   (EnumMember)",
+      " ﲀ  (Constant)",
+      " ﳤ  (Struct)",
+      "   (Event)",
+      "   (Operator)",
+      "   (TypeParameter)",
+    }
+
+    mason_lsp_config.setup_handlers({
+      function(server_name)
+        if server_name then
+          lsp[server_name].setup({})
+        end
+      end,
+    })
+
+    lspsaga.setup({
+      finder = {
+        max_height = 0.6,
+        keys = {
+          vsplit = "<C-v>",
+          toggle_or_open = "<cr>",
         },
       },
     })
 
-    -- setup lsp
-    lsp.setup()
+    -- define formatters for filetype
+    ft("lua"):fmt("stylua")
+    ft("typescript,javascript,typescriptreact"):fmt("prettier")
 
-    -- setup null-ls sources
-    null_ls.setup({
-      sources = {
-        null_ls.builtins.diagnostics.eslint,
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
-      },
-    })
-
-    -- setup bindigs from mason to null_ls
-    mason_null_ls.setup({
-      ensure_installed = linter_list,
-      automatic_installation = true,
-      handlers = {},
+    require("guard").setup({
+      fmt_on_save = true,
+      lsp_as_default_formatter = false,
     })
   end,
 }

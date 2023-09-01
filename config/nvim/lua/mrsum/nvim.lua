@@ -20,7 +20,6 @@ local plugins_list = {
 
   -- core
   { import = "mrsum.core.autocmds" },
-  { import = "mrsum.core.options" },
   { import = "mrsum.core.keymaps" },
 
   -- editor plugins

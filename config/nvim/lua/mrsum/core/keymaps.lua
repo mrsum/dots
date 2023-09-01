@@ -34,8 +34,9 @@ return {
       ["<S-B>"] = { "<cmd>FzfLua git_branches<cr>", "Git branches" },
       ["<S-C>"] = { "<cmd>FzfLua git_commits<cr>", "Git commits" },
 
+      ["."] = { "<cmd>Lspsaga finder<cr>", "LSP finder" },
+
       -- lsp
-      ["."] = { "<cmd>FzfLua lsp_finder<cr>", "LSP finder" },
       ["<S-L>"] = { "<cmd>FzfLua lsp_references<cr>", "LSP references" },
       ["<S-D>"] = { "<cmd>FzfLua lsp_document_diagnostics<cr>", "LSP document diagnostics" },
       ["<S-W>"] = { "<cmd>FzfLua lsp_workspace_diagnostics<cr>", "LSP workspace diagnostics" },
