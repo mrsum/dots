@@ -28,7 +28,6 @@ return {
     -- Custom
     "folke/neodev.nvim",
     "glepnir/lspsaga.nvim",
-    "lukas-reineke/lsp-format.nvim",
   },
 
   config = function()
