@@ -37,6 +37,7 @@ local plugins_list = {
 
   -- git
   { import = "mrsum.plugins.git.diffview" },
+  { import = "mrsum.plugins.git.neogit" },
   { import = "mrsum.plugins.git.gitsigns" },
 }
 

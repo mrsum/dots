@@ -17,8 +17,8 @@ return {
       ["qq"] = { "<cmd>:q!<cr>", "Exit without savings" },
 
       -- neotree
-
       ["<C-e>"] = { "<cmd>Neotree toggle<cr>", "Neotree toggle" },
+
       -- global keys
       ["<CR>"] = { "<cmd>noh<cr><cr>", "Clear highlights" },
       ["<C-s>"] = { "<cmd>:w<cr>", "Save file" },
@@ -59,6 +59,7 @@ return {
       ["<S-Tab>"] = { "<cmd>tabp<cr>", "Prev tab" },
 
       -- plugins hotkeys
+      ["<C-g>"] = { "<cmd>Neogit<cr>", "Open Neogit" },
       ["<C-d>"] = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
     }
 
