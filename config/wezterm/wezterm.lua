@@ -19,8 +19,6 @@ local config = {
     left = 10,
     right = 10,
   },
-  initial_rows = 50,
-  initial_cols = 180,
   inactive_pane_hsb = {
     saturation = 1.0,
     brightness = wezterm.GLOBAL.is_dark and 0.90 or 0.95,
