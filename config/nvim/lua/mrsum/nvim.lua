@@ -32,6 +32,7 @@ local plugins_list = {
   { import = "mrsum.plugins.editor.fzf" },
   { import = "mrsum.plugins.editor.mini" },
   { import = "mrsum.plugins.editor.satellite" },
+  { import = "mrsum.plugins.editor.formatter" },
 
   -- lsp
   { import = "mrsum.plugins.lsp" },

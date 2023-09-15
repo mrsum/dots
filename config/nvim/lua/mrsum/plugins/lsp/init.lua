@@ -5,12 +5,14 @@ local lang_list = {
   "bashls",
   "eslint",
   "graphql",
-  "null_ls",
   "jsonls",
   "yamlls",
   "tsserver",
   "emmet_ls",
   "cssmodules_ls",
+}
+
+local formatter_linter_list = {
   "stylua",
   "prettier",
   "eslint_d",
@@ -23,7 +25,6 @@ return {
     -- LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim", -- Optional
-    "nvimdev/guard.nvim",
 
     -- Custom
     "folke/neodev.nvim",
@@ -32,7 +33,6 @@ return {
 
   config = function()
     local lsp = require("lspconfig")
-    local ft = require("guard.filetype")
     local mason = require("mason")
     local lspsaga = require("lspsaga")
     local mason_lsp_config = require("mason-lspconfig")
@@ -108,15 +108,6 @@ return {
           toggle_or_open = "<cr>",
         },
       },
-    })
-
-    -- define formatters for filetype
-    ft("lua"):fmt("stylua")
-    ft("typescript,javascript,typescriptreact"):fmt("prettier")
-
-    require("guard").setup({
-      fmt_on_save = true,
-      lsp_as_default_formatter = false,
     })
   end,
 }
