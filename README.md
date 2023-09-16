@@ -2,13 +2,25 @@
 
 ![Dotfiles](image.png)
 
-#### Requirments:
+
+#### Keymaps:
 
 ```bash
-NVIM v0.10.0-*
-```
+# Navigation
+<C-t> - create new tab
+<Tab>/<S-Tab> - switch tab
+<S-V> - split vertical
+<S-H> - split horizontal
+<S-Up>/<S-Down>/<S-Left>/<S-Right> - move between screens
 
-For [installation check](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x)
+# LSP
+<.> - LSP Finder
+<S-O> - LSP Outlines
+
+# GIT
+<C-G> - gitui
+<C-D> - Diffview
+```
 
 #### Install:
 
