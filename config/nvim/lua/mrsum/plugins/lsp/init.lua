@@ -63,6 +63,11 @@ return {
       underline = true,
     })
 
+    vim.diagnostic.config({
+      float = {
+        border = "rounded",
+      },
+    })
     -- symbols for autocomplete
     vim.lsp.protocol.CompletionItemKind = {
       "   (Text) ",

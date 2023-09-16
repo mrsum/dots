@@ -4,7 +4,7 @@ local Fonts = {}
 
 function Fonts.setup(config)
   config.font = wezterm.font_with_fallback({
-    family = "FiraCode Nerd Font Mono",
+    family = "JetBrainsMono Nerd Font",
     weight = "Bold",
   })
 

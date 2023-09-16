@@ -25,6 +25,8 @@ return {
       }
     end
 
+    local default_formatter = require("formatter.filetypes.any").remove_trailing_whitespace
+
     require("formatter").setup({
       logging = true,
       log_level = vim.log.levels.WARN,
@@ -49,6 +51,14 @@ return {
           end,
         },
 
+        html = {
+          default_frontend_formatter,
+        },
+
+        css = {
+          default_frontend_formatter,
+        },
+
         typescript = {
           default_frontend_formatter,
         },
@@ -62,7 +72,7 @@ return {
         },
 
         ["*"] = {
-          require("formatter.filetypes.any").remove_trailing_whitespace,
+          default_formatter,
         },
       },
     })
