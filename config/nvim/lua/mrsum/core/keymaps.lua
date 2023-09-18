@@ -37,6 +37,7 @@ return {
       ["."] = { "<cmd>Lspsaga finder<cr>", "LSP finder" },
 
       -- lsp
+      ["<S-K>"] = { "<cmd>Lspsaga hover_doc<cr>", "LSP hover doc" },
       ["<S-L>"] = { "<cmd>FzfLua lsp_references<cr>", "LSP references" },
       ["<S-D>"] = { "<cmd>FzfLua lsp_document_diagnostics<cr>", "LSP document diagnostics" },
       ["<S-W>"] = { "<cmd>FzfLua lsp_workspace_diagnostics<cr>", "LSP workspace diagnostics" },

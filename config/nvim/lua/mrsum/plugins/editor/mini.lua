@@ -6,7 +6,6 @@ return {
     require("mini.map").setup()
     require("mini.pairs").setup()
     require("mini.comment").setup()
-    require("mini.starter").setup()
     require("mini.surround").setup()
     require("mini.cursorword").setup()
 
@@ -17,6 +16,26 @@ return {
         priority = 2,
       },
       symbol = "|",
+    })
+
+    -- on start
+    require("mini.starter").setup({
+      autoopen = true,
+      evaluate_single = true,
+      items = {
+        { action = "ene | startinsert", name = "New file", section = "Files" },
+        { action = "FzfLua files", name = "File browser", section = "Files" },
+        { action = "FzfLua live_grep", name = "Grep", section = "Search" },
+        { action = [[lua require("persistence").load()]], name = "Session restore", section = "Session" },
+        { action = "qa", name = "Exit", section = "Exit" },
+      },
+      content_hooks = {
+        require("mini.starter").gen_hook.adding_bullet(),
+        require("mini.starter").gen_hook.aligning("center", "center"),
+      },
+      header = nil,
+      footer = "",
+      query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_-.",
     })
 
     -- highlight patterns
