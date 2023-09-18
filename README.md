@@ -34,13 +34,13 @@
 - $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-#### Copy:
-
+#### LSP / Linters / Formatters
 ```bash
-cp -r ./config ~/.config
+nvim
+:Mason install eslint prettier stylua ...
 ```
 
-Or create symlink
+#### Create symlink
 
 ```bash
 ln -s ~/path/to/repo/config ~/.config

@@ -28,7 +28,7 @@ return {
       -- fzf
       ["<S-P>"] = { "<cmd>FzfLua files<cr>", "Pick file" },
       ["<S-F>"] = { "<cmd>FzfLua live_grep<cr>", "Grep string" },
-      ["<S-O>"] = { "<cmd>FzfLua lsp_document_symbols<cr>", "Grep string" },
+      ["<S-O>"] = { "<cmd>Lspsaga outline<cr>", "Grep string" },
 
       ["<S-S>"] = { "<cmd>FzfLua git_status<cr>", "Git status" },
       ["<S-B>"] = { "<cmd>FzfLua git_branches<cr>", "Git branches" },

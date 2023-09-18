@@ -134,6 +134,7 @@ return {
           end
         end, { "i", "s" }),
       },
+
       sources = {
         { name = "path" },
         { name = "nvim_lsp" },

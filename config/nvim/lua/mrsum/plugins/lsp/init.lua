@@ -106,11 +106,20 @@ return {
     })
 
     lspsaga.setup({
+      lightbulb = {
+        enable = false,
+      },
       finder = {
         max_height = 0.6,
         keys = {
           vsplit = "<C-v>",
-          toggle_or_open = "<cr>",
+          toggle_or_open = "<CR>",
+        },
+      },
+      outline = {
+        win_width = 50,
+        keys = {
+          toggle_or_jump = "<CR>",
         },
       },
     })
