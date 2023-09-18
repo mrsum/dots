@@ -17,6 +17,7 @@ local plugins_list = {
 
   -- themes
   { import = "mrsum.themes.catppuccin" },
+  { import = "mrsum.themes.nordic" },
 
   -- core
   { import = "mrsum.core.autocmds" },
