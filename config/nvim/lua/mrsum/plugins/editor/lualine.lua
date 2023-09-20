@@ -10,7 +10,7 @@ return {
 
     plugin.setup({
       options = {
-        theme = "nordic",
+        theme = "auto",
       },
     })
   end,
