@@ -10,7 +10,7 @@ return {
 
     plugin.setup({
       options = {
-        theme = "iceberg_dark",
+        theme = "nordic",
       },
     })
   end,

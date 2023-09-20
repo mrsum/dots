@@ -64,7 +64,6 @@ return {
           LspInfoBorder = {
             fg = colors.overlay1,
           },
-
           IndentBlanklineContextChar = {
             fg = colors.overlay0,
           },

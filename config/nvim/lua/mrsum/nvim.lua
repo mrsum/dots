@@ -17,14 +17,12 @@ local plugins_list = {
 
   -- themes
   { import = "mrsum.themes.catppuccin" },
-  { import = "mrsum.themes.nordic" },
 
   -- core
   { import = "mrsum.core.autocmds" },
   { import = "mrsum.core.keymaps" },
 
   -- editor plugins
-  { import = "mrsum.plugins.editor.tabby" },
   { import = "mrsum.plugins.editor.neoscroll" },
   { import = "mrsum.plugins.editor.lualine" },
   { import = "mrsum.plugins.editor.neotree" },
