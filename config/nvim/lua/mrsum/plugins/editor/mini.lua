@@ -26,7 +26,6 @@ return {
         { action = "ene | startinsert", name = "New file", section = "Files" },
         { action = "FzfLua files", name = "File browser", section = "Files" },
         { action = "FzfLua live_grep", name = "Grep", section = "Search" },
-        { action = [[lua require("persistence").load()]], name = "Session restore", section = "Session" },
         { action = "qa", name = "Exit", section = "Exit" },
       },
       content_hooks = {

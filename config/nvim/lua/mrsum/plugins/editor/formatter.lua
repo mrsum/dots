@@ -1,79 +1,27 @@
 return {
-  "mhartington/formatter.nvim",
+  "stevearc/conform.nvim",
   name = "_.mrsum.plugins.editor.formatter",
   config = function()
-    local util = require("formatter.util")
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      callback = function(args)
+        require("conform").format({ bufnr = args.buf })
+      end,
+    })
 
-    -- create autocmd for
-    vim.cmd([[
-      augroup FormatAutogroup
-        autocmd!
-        autocmd BufWritePost * FormatWriteLock
-      augroup END
-    ]])
-
-    -- default fronted formatter
-    -- get prettier from node_modules folder
-    -- inside project
-    local default_frontend_formatter = function()
-      return {
-        exe = vim.loop.cwd() .. "/node_modules/.bin/prettier",
-        args = {
-          vim.api.nvim_buf_get_name(0),
-        },
-        stdin = true,
-      }
-    end
-
-    local default_formatter = require("formatter.filetypes.any").remove_trailing_whitespace
-
-    require("formatter").setup({
-      logging = true,
-      log_level = vim.log.levels.WARN,
-      filetype = {
-        lua = {
-          require("formatter.filetypes.lua").stylua,
-          function()
-            if util.get_current_buffer_file_name() == "special.lua" then
-              return nil
-            end
-            return {
-              exe = "stylua",
-              args = {
-                "--search-parent-directories",
-                "--stdin-filepath",
-                util.escape_path(util.get_current_buffer_file_path()),
-                "--",
-                "-",
-              },
-              stdin = true,
-            }
-          end,
-        },
-
-        html = {
-          default_frontend_formatter,
-        },
-
-        css = {
-          default_frontend_formatter,
-        },
-
-        typescript = {
-          default_frontend_formatter,
-        },
-
-        javascript = {
-          default_frontend_formatter,
-        },
-
-        json = {
-          default_frontend_formatter,
-        },
-
-        ["*"] = {
-          default_formatter,
-        },
+    require("conform").setup({
+      format_on_save = {
+        -- These options will be passed to conform.format()
+        timeout_ms = 500,
+        lsp_format = "fallback",
+      },
+      formatters_by_ft = {
+        lua = { "stylua" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        -- Use a sub-list to run only the first available formatter
+        javascript = { { "prettier" } },
+        typescript = { { "prettier" } },
       },
     })
   end,

@@ -17,6 +17,7 @@ local plugins_list = {
 
   -- themes
   { import = "mrsum.themes.catppuccin" },
+  -- { import = "mrsum.themes.nightowl" },
 
   -- core
   { import = "mrsum.core.autocmds" },
@@ -25,6 +26,8 @@ local plugins_list = {
   -- editor plugins
   { import = "mrsum.plugins.editor.neoscroll" },
   { import = "mrsum.plugins.editor.lualine" },
+
+  { import = "mrsum.plugins.editor.scope" },
   { import = "mrsum.plugins.editor.neotree" },
   { import = "mrsum.plugins.editor.treesitter" },
   { import = "mrsum.plugins.editor.cmp" },
@@ -32,6 +35,7 @@ local plugins_list = {
   { import = "mrsum.plugins.editor.mini" },
   { import = "mrsum.plugins.editor.formatter" },
   { import = "mrsum.plugins.editor.wilder" },
+  { import = "mrsum.plugins.editor.trouble" },
 
   -- lsp
   { import = "mrsum.plugins.lsp" },

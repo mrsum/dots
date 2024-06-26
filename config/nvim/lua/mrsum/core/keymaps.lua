@@ -39,8 +39,8 @@ return {
       -- lsp
       ["<S-K>"] = { "<cmd>Lspsaga hover_doc<cr>", "LSP hover doc" },
       ["<S-L>"] = { "<cmd>FzfLua lsp_references<cr>", "LSP references" },
-      ["<S-D>"] = { "<cmd>FzfLua lsp_document_diagnostics<cr>", "LSP document diagnostics" },
-      ["<S-W>"] = { "<cmd>FzfLua lsp_workspace_diagnostics<cr>", "LSP workspace diagnostics" },
+      ["<S-D>"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "LSP document diagnostics" },
+      ["<S-W>"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "LSP workspace diagnostics" },
       ["<S-Q>"] = { "<cmd>FzfLua lsp_quickfix<cr>", "LSP quickfix" },
 
       -- spits

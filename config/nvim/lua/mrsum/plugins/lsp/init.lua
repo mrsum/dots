@@ -12,11 +12,11 @@ local lang_list = {
   "cssmodules_ls",
 }
 
-local formatter_linter_list = {
-  "stylua",
-  "prettier",
-  "eslint_d",
-}
+-- local formatter_linter_list = {
+--   "stylua",
+--   "prettier",
+--   "eslint_d",
+-- }
 
 return {
   "neovim/nvim-lspconfig",
