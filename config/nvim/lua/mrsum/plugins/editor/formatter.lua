@@ -9,19 +9,27 @@ return {
       end,
     })
 
-    require("conform").setup({
+    local setup, plugin = pcall(require, "conform")
+    if not setup then
+      return
+    end
+
+    plugin.setup({
       format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_format = "fallback",
       },
       formatters_by_ft = {
         lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
+        json = { "prettier" },
+
         python = { "isort", "black" },
-        -- Use a sub-list to run only the first available formatter
-        javascript = { { "prettier" } },
-        typescript = { { "prettier" } },
+
+        html = { "prettier" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
       },
     })
   end,

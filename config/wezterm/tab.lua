@@ -73,7 +73,7 @@ local function get_process(tab)
       { Foreground = { Color = colors.mauve } },
       { Text = "" },
     },
-    ["flatpak"] = {
+    ["nvim"] = {
       { Foreground = { Color = colors.blue } },
       { Text = "󰏖" },
     },

@@ -3,7 +3,8 @@ local wezterm = require("wezterm")
 local Keys = {}
 
 local function is_vi_process(pane)
-  return pane:get_foreground_process_name():find("n?vim") ~= nil
+  local process_name = string.gsub(pane:get_foreground_process_name(), "(.*[/\\])(.*)", "%2")
+  return process_name == "nvim" or process_name == "vim" or process_name == "e"
 end
 
 local direction_keys = {
@@ -62,7 +63,7 @@ function Keys.setup(config)
       action = wezterm.action.SplitPane({
         top_level = true,
         direction = "Right",
-        size = { Percent = 50 },
+        size = { Percent = 20 },
       }),
     },
 
@@ -83,7 +84,7 @@ function Keys.setup(config)
         top_level = true,
         direction = "Down",
         size = {
-          Percent = 50,
+          Percent = 10,
         },
       }),
     },

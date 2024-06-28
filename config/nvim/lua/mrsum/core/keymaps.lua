@@ -47,10 +47,10 @@ return {
       ["<S-H>"] = { "<cmd>sp<cr>", "Horizontal split" },
 
       -- split.navigation
-      ["<S-Up>"] = { "<C-w>k", "Go to upper split" },
-      ["<S-Down>"] = { "<C-w>j", "Go to bottom split" },
-      ["<S-Right>"] = { "<C-w>l", "Go to right split " },
-      ["<S-Left>"] = { "<C-w>h", "Go to left split" },
+      ["<S-Up>"] = { "<cmd>SmartCursorMoveUp<cr>", "Go to upper split" },
+      ["<S-Down>"] = { "<cmd>SmartCursorMoveDown<cr>", "Go to bottom split" },
+      ["<S-Right>"] = { "<cmd>SmartCursorMoveRight<cr>", "Go to right split " },
+      ["<S-Left>"] = { "<cmd>SmartCursorMoveLeft<cr>", "Go to left split" },
 
       -- tabs
       ["<C-t>"] = { "<cmd>$tabnew<cr>", "New tab" },

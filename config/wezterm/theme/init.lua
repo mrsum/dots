@@ -5,7 +5,7 @@ local Theme = {}
 function Theme.get_colors()
   wezterm.GLOBAL.is_dark = wezterm.gui.get_appearance():find("Dark")
 
-  local THEME_NAME = "github"
+  local THEME_NAME = "catppuccin"
   local palettes = require("theme.palettes." .. THEME_NAME)
 
   return wezterm.GLOBAL.is_dark and palettes.mocha or palettes.latte
