@@ -6,5 +6,19 @@ return {
     "sindrets/diffview.nvim",
     "ibhagwan/fzf-lua",
   },
-  config = true,
+  config = function()
+    local setup, plugin = pcall(require, "neogit")
+    if not setup then
+      return
+    end
+
+    plugin.setup({
+      popup = {
+        kind = "floating",
+      },
+      commit_popup = {
+        kind = "floating",
+      },
+    })
+  end,
 }

@@ -55,7 +55,6 @@ return {
 
       -- plugins hotkeys
       ["<C-g>"] = { "<cmd>Neogit<cr>", "Open Neogit" },
-      ["<C-d>"] = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
       ["<S-S>"] = { "<cmd>FzfLua git_status<cr>", "Git status" },
       ["<S-B>"] = { "<cmd>FzfLua git_branches<cr>", "Git branches" },
       ["<S-C>"] = { "<cmd>FzfLua git_commits<cr>", "Git commits" },
