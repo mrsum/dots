@@ -16,6 +16,7 @@ return {
         mason = true,
         neotree = true,
         neogit = true,
+        diffview = true,
         which_key = true,
         telescope = true,
         noice = true,

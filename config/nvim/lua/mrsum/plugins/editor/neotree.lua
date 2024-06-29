@@ -96,7 +96,6 @@ return {
       winbar = true,
       sources = {
         { source = "filesystem", display_name = "  Files " },
-        { source = "buffers", display_name = "  Bufs " },
         { source = "git_status", display_name = "  Git " },
       },
     },

@@ -3,7 +3,7 @@ return {
   name = "_.mrsum.core.autocmds",
   config = function()
     local _autocmd = vim.api.nvim_create_autocmd
-    local _augroup = vim.api.nvim_create_augroup
+    -- local _augroup = vim.api.nvim_create_augroup
 
     _autocmd("TextYankPost", {
       pattern = "*",
