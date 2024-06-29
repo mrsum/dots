@@ -27,7 +27,6 @@ local plugins_list = {
   { import = "mrsum.plugins.editor.lualine" },
   { import = "mrsum.plugins.editor.split" },
 
-  { import = "mrsum.plugins.editor.scope" },
   { import = "mrsum.plugins.editor.neotree" },
   { import = "mrsum.plugins.editor.treesitter" },
   { import = "mrsum.plugins.editor.cmp" },
@@ -41,7 +40,6 @@ local plugins_list = {
   { import = "mrsum.plugins.lsp" },
 
   -- git
-  { import = "mrsum.plugins.git.diffview" },
   { import = "mrsum.plugins.git.neogit" },
   { import = "mrsum.plugins.git.gitsigns" },
 }

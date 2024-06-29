@@ -2,9 +2,12 @@ import = ["/Users/mrsum/.config/alacritty/thm/tokyo-night.toml"]
 live_config_reload = true
 
 [font]
-size = 16.0
+size = 14.0
 
 [font.normal]
+# family = "FiraCode Nerd Font Mono"
+# style = "Retina"
+
 family = "JetBrainsMonoNL Nerd Font"
 style = "Regular"
 

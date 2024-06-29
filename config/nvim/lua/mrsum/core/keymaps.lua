@@ -30,13 +30,8 @@ return {
       ["<S-F>"] = { "<cmd>FzfLua live_grep<cr>", "Grep string" },
       ["<S-O>"] = { "<cmd>Lspsaga outline<cr>", "Grep string" },
 
-      ["<S-S>"] = { "<cmd>FzfLua git_status<cr>", "Git status" },
-      ["<S-B>"] = { "<cmd>FzfLua git_branches<cr>", "Git branches" },
-      ["<S-C>"] = { "<cmd>FzfLua git_commits<cr>", "Git commits" },
-
-      ["."] = { "<cmd>Lspsaga finder<cr>", "LSP finder" },
-
       -- lsp
+      ["."] = { "<cmd>Lspsaga finder<cr>", "LSP finder" },
       ["<S-K>"] = { "<cmd>Lspsaga hover_doc<cr>", "LSP hover doc" },
       ["<S-L>"] = { "<cmd>FzfLua lsp_references<cr>", "LSP references" },
       ["<S-D>"] = { "<cmd>Trouble diagnostics toggle<cr>", "LSP document diagnostics" },
@@ -61,6 +56,9 @@ return {
       -- plugins hotkeys
       ["<C-g>"] = { "<cmd>Neogit<cr>", "Open Neogit" },
       ["<C-d>"] = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
+      ["<S-S>"] = { "<cmd>FzfLua git_status<cr>", "Git status" },
+      ["<S-B>"] = { "<cmd>FzfLua git_branches<cr>", "Git branches" },
+      ["<S-C>"] = { "<cmd>FzfLua git_commits<cr>", "Git commits" },
     }
 
     local insert_mode = {

@@ -24,7 +24,7 @@ local config = {
     brightness = wezterm.GLOBAL.is_dark and 0.90 or 0.95,
   },
   enable_scroll_bar = false,
-  window_background_opacity = 1,
+  window_background_opacity = 0.98,
   hyperlink_rules = {
     {
       regex = "\\b\\w+://[\\w.-]+:[0-9]{2,15}\\S*\\b",
