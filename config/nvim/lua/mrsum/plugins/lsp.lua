@@ -37,22 +37,7 @@ return {
     local lspsaga = require("lspsaga")
     local mason_lsp_config = require("mason-lspconfig")
 
-    -- install lsp language from list
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
-
-    -- languages and linters
-    mason_lsp_config.setup({
-      ensure_installed = lang_list,
-      automatic_installation = true,
-    })
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       virtual_text = {
@@ -68,6 +53,7 @@ return {
         border = "rounded",
       },
     })
+
     -- symbols for autocomplete
     vim.lsp.protocol.CompletionItemKind = {
       "   (Text) ",
@@ -97,6 +83,23 @@ return {
       "   (TypeParameter)",
     }
 
+    -- install lsp language from list
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    -- languages and linters
+    mason_lsp_config.setup({
+      ensure_installed = lang_list,
+      automatic_installation = true,
+    })
+
     mason_lsp_config.setup_handlers({
       function(server_name)
         if server_name then
@@ -123,5 +126,11 @@ return {
         },
       },
     })
+
+    for k, v in pairs(lang_list) do
+      lsp[v].setup({
+        capabilities = capabilities,
+      })
+    end
   end,
 }

@@ -14,8 +14,8 @@ return {
 
     local t = {}
 
-    t["<C-Up>"] = { "scroll", { "-vim.wo.scroll", "true", "150" } }
-    t["<C-Down>"] = { "scroll", { "vim.wo.scroll", "true", "150" } }
+    t["<C-Up>"] = { "scroll", { "-vim.wo.scroll", "true", "50" } }
+    t["<C-Down>"] = { "scroll", { "vim.wo.scroll", "true", "50" } }
 
     neoscroll.setup()
     config.set_mappings(t)

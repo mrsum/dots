@@ -1,5 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -26,22 +27,20 @@ local plugins_list = {
   { import = "mrsum.plugins.editor.neoscroll" },
   { import = "mrsum.plugins.editor.lualine" },
   { import = "mrsum.plugins.editor.split" },
-
   { import = "mrsum.plugins.editor.neotree" },
   { import = "mrsum.plugins.editor.treesitter" },
-  { import = "mrsum.plugins.editor.cmp" },
   { import = "mrsum.plugins.editor.fzf" },
   { import = "mrsum.plugins.editor.mini" },
   { import = "mrsum.plugins.editor.formatter" },
-  { import = "mrsum.plugins.editor.wilder" },
   { import = "mrsum.plugins.editor.trouble" },
-
-  -- lsp
-  { import = "mrsum.plugins.lsp" },
+  { import = "mrsum.plugins.editor.cmp" },
 
   -- git
   { import = "mrsum.plugins.git.neogit" },
   { import = "mrsum.plugins.git.gitsigns" },
+
+  -- lsp
+  { import = "mrsum.plugins.lsp" },
 }
 
 require("lazy").setup(plugins_list)
