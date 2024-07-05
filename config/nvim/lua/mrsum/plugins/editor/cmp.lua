@@ -3,7 +3,8 @@ return {
   name = "_.mrsum.plugins.editor.cmp",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer"
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path"
   },
   config = function()
     local cmp = require("cmp")
@@ -21,7 +22,7 @@ return {
         },
       },
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
+        { name = "nvim_lsp", keyword_length = 1 },
         { name = "path" },
         { name = "buffer" },
       }),
@@ -59,6 +60,13 @@ return {
           end
         end, { "i", "s" }),
       },
+    })
+
+    cmp.setup.cmdline({ '/', '?' }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
     })
   end,
 }
