@@ -29,6 +29,7 @@ return {
       ["<S-P>"] = { "<cmd>FzfLua files<cr>", "Pick file" },
       ["<S-F>"] = { "<cmd>FzfLua live_grep<cr>", "Grep string" },
       ["<S-O>"] = { "<cmd>Lspsaga outline<cr>", "Grep string" },
+      ["<S-R>"] = { "<cmd>FzfLua blines<cr>", "Grep string in file" },
 
       -- lsp
       ["."] = { "<cmd>Lspsaga finder<cr>", "LSP finder" },
