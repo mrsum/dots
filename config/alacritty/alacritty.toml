@@ -1,18 +1,21 @@
 import = ["/Users/mrsum/.config/alacritty/thm/tokyo-night.toml"]
 live_config_reload = true
 
+[env]
+  TERM = "alacritty-direct"
+
 [font]
-size = 16.0
+  size = 16.0
 
 [font.normal]
-family = "JetBrainsMonoNL Nerd Font"
-style = "Regular"
+  family = "JetBrainsMonoNL Nerd Font"
+  style = "Regular"
 
 [window]
-decorations = "buttonless"
-dynamic_padding = true
-opacity = 0.99
+  opacity = 0.98
+  decorations = "buttonless"
+  dynamic_padding = true
 
 [window.padding]
-x = 10
-y = 20
+  x = 10
+  y = 20

@@ -3,6 +3,7 @@ return {
   name = "_.mrsum.plugins.editor.cmp",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer"
   },
   config = function()
     local cmp = require("cmp")
