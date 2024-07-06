@@ -25,7 +25,6 @@ return {
     -- LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim", -- Optional
-
     -- Custom
     "folke/neodev.nvim",
     "glepnir/lspsaga.nvim",

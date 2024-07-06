@@ -1,6 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -41,6 +40,7 @@ local plugins_list = {
 
   -- lsp
   { import = "mrsum.plugins.lsp" },
+  { import = "mrsum.plugins.extends.typescript" },
 }
 
 require("lazy").setup(plugins_list)
