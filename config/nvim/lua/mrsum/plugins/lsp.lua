@@ -8,7 +8,6 @@ local lang_list = {
   "jsonls",
   "yamlls",
   "tsserver",
-  "emmet_ls",
   "cssmodules_ls",
 }
 

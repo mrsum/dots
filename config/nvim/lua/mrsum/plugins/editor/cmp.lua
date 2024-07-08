@@ -13,7 +13,6 @@ return {
     "hrsh7th/cmp-nvim-lsp-document-symbol",
     "onsails/lspkind-nvim",
     "dmitmel/cmp-cmdline-history",
-    "saadparwaiz1/cmp_luasnip",
     "lukas-reineke/cmp-under-comparator",
   },
   config = function()
@@ -54,7 +53,6 @@ return {
         { name = "nvim_lua" },
         { name = "codeium" },
         { name = "cmp_tabnine" },
-        { name = "luasnip" },
         { name = "ultisnips" },
         { name = "buffer", max_item_count = 15 },
         { name = "path" },

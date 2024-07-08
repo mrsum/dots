@@ -25,6 +25,7 @@ return {
       "git_rebase",
       "gitattributes",
       "gitcommit",
+      "styled",
     }
 
     plugin.setup({
