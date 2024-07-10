@@ -3,7 +3,6 @@ return {
   name = "_.mrsum.plugins.editor.cmp",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
@@ -20,6 +19,20 @@ return {
     local lspkind = require("lspkind")
 
     cmp.setup({
+      sources = {
+        {
+          name = "nvim_lsp",
+          max_item_count = 15,
+          entry_filter = function(entry, ctx)
+            return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+          end,
+        },
+        { name = "nvim_lua" },
+        { name = "ultisnips" },
+        { name = "buffer",   max_item_count = 15 },
+        { name = "path" },
+      },
+
       sorting = {
         comparators = {
           cmp.config.compare.offset,
@@ -41,21 +54,6 @@ return {
         ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-      },
-      sources = {
-        {
-          name = "nvim_lsp",
-          max_item_count = 15,
-          entry_filter = function(entry, ctx)
-            return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-          end,
-        },
-        { name = "nvim_lua" },
-        { name = "codeium" },
-        { name = "cmp_tabnine" },
-        { name = "ultisnips" },
-        { name = "buffer", max_item_count = 15 },
-        { name = "path" },
       },
       experimental = { ghost_text = false },
       formatting = {
@@ -98,16 +96,8 @@ return {
             buffer = "[Buffer]",
             zsh = "[Zsh]",
             spell = "[Spell]",
-            luasnip = "[Luasnip]",
-            cmp_tabnine = "[TabNine]",
-            codeium = "[Codeium]",
           })[entry.source.name]
           return vim_item
-        end,
-      },
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
         end,
       },
       window = {
