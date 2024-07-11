@@ -32,8 +32,7 @@ return {
         prettierd = {
           condition = function()
             return vim.loop.fs_realpath(".prettierrc.js") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.mjs") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.json") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.json") ~= nil
           end,
         },
       },

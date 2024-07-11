@@ -41,7 +41,6 @@ local plugins_list = {
 
   -- lsp
   { import = "mrsum.plugins.lsp" },
-  { import = "mrsum.plugins.extends.typescript" },
 }
 
 require("lazy").setup(plugins_list)

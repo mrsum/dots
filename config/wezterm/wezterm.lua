@@ -14,10 +14,10 @@ local config = {
   window_decorations = "RESIZE",
   window_close_confirmation = "NeverPrompt",
   window_padding = {
-    top = 0,
-    bottom = 0,
-    left = 0,
-    right = 0,
+    top = 50,
+    bottom = 50,
+    left = 50,
+    right = 50,
   },
   inactive_pane_hsb = {
     saturation = 1.0,
