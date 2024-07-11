@@ -8,10 +8,12 @@ return {
       return
     end
 
-    plugin.setup({
+    local opts = {
       options = {
         theme = "auto",
       },
-    })
+
+    }
+    plugin.setup(opts)
   end,
 }

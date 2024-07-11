@@ -34,6 +34,7 @@ local plugins_list = {
   { import = "mrsum.plugins.editor.trouble" },
   { import = "mrsum.plugins.editor.cmp" },
   { import = "mrsum.plugins.editor.tabby" },
+  { import = "mrsum.plugins.editor.minimap" },
 
   -- git
   { import = "mrsum.plugins.git.neogit" },
