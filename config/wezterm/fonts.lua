@@ -4,7 +4,7 @@ local Fonts = {}
 
 function Fonts.setup(config)
   config.font = wezterm.font_with_fallback({
-    family = "JetBrainsMonoNL Nerd Font Mono",
+    family = "JetBrainsMonoNerd Font Mono",
     weight = "Medium",
   })
 

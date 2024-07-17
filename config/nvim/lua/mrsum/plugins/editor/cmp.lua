@@ -59,34 +59,6 @@ return {
       formatting = {
         -- format of popup menu
         format = function(entry, vim_item)
-          local kind_icons = {
-            Text = "",
-            Method = "󰆧",
-            Function = "󰊕",
-            Constructor = "",
-            Field = "󰇽",
-            Variable = "󰂡",
-            Class = "󰠱",
-            Interface = "",
-            Module = "",
-            Property = "󰜢",
-            Unit = "",
-            Value = "󰎠",
-            Enum = "",
-            Keyword = "󰌋",
-            Snippet = "",
-            Color = "󰏘",
-            File = "󰈙",
-            Reference = "",
-            Folder = "󰉋",
-            EnumMember = "",
-            Constant = "󰏿",
-            Struct = "",
-            Event = "",
-            Operator = "󰆕",
-            TypeParameter = "󰅲",
-          }
-
           vim_item.kind = string.format(" %s %s ", lspkind.presets.default[vim_item.kind], vim_item.kind)
           vim_item.menu = ({
             nvim_lsp = "[Lsp]",
@@ -96,6 +68,7 @@ return {
             buffer = "[Buffer]",
             zsh = "[Zsh]",
             spell = "[Spell]",
+            codeium = "[AI]",
           })[entry.source.name]
           return vim_item
         end,
