@@ -1,4 +1,4 @@
-import = ["/Users/mrsum/.config/alacritty/thm/tokyo-night.toml"]
+import = ["~/.config/alacritty/thm/tokyo-night.toml"]
 live_config_reload = true
 
 [env]
