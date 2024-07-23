@@ -17,7 +17,7 @@ local plugins_list = {
 
   -- themes
   { import = "mrsum.themes.catppuccin" },
-
+  { import = "mrsum.themes.kanagawa" },
   -- core
   { import = "mrsum.core.autocmds" },
   { import = "mrsum.core.keymaps" },
