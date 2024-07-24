@@ -15,27 +15,25 @@ return {
     })
 
     plugin.setup({
-      formatters_by_ft = {
-        html = { { "prettierd" } },
-        javascript = { { "prettierd" } },
-        javascriptreact = { { "prettierd" } },
-        markdown = { { "prettierd" } },
-        typescript = { { "prettierd" } },
-        typescriptreact = { { "prettierd" } },
-        ["*"] = { "trim_whitespace" },
-      },
       format_on_save = {
         timeout_ms = 500,
         lsp_fallback = true,
       },
       formatters = {
-        prettierd = {
+        prettier = {
           condition = function()
-            return vim.loop.fs_realpath(".prettierrc.js") ~= nil
-                or vim.loop.fs_realpath(".prettierrc.json") ~= nil
+            return vim.loop.fs_realpath(".prettierrc.js") ~= nil or vim.loop.fs_realpath(".prettierrc.json") ~= nil
           end,
         },
       },
     })
+
+    plugin.formatters_by_ft.lua = { "stylua" }
+    plugin.formatters_by_ft.html = { "prettier", "prettierd" }
+    plugin.formatters_by_ft.css = { "prettier", "prettierd" }
+    plugin.formatters_by_ft.json = { "prettier", "prettierd" }
+    plugin.formatters_by_ft.javascript = { "prettier", "prettierd" }
+    plugin.formatters_by_ft.typescript = { "prettier", "prettierd" }
+    plugin.formatters_by_ft.typescriptreact = { "prettier", "prettierd" }
   end,
 }
