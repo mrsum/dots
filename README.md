@@ -79,7 +79,7 @@ local visual_mode = {
   { "<", "<gv", desc = "Move left" },
   { ">", ">gv", desc = "Move right" },
 }
-``
+```
 
 #### Install:
 
