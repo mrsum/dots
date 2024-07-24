@@ -59,6 +59,7 @@ return {
       { "<S-S>",     "<cmd>FzfLua git_status<cr>",          desc = "Git status" },
       { "<S-B>",     "<cmd>FzfLua git_branches<cr>",        desc = "Git branches" },
       { "<S-C>",     "<cmd>FzfLua git_commits<cr>",         desc = "Git commits" },
+      { "<C-d>",     "<cmd>DiffviewOpen<cr>",               desc = "DiffView" },
     }
 
     local insert_mode = {
