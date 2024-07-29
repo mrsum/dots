@@ -29,7 +29,7 @@ return {
         },
         { name = "nvim_lua" },
         { name = "ultisnips" },
-        { name = "buffer",   max_item_count = 15 },
+        { name = "buffer", max_item_count = 15 },
         { name = "path" },
       },
       sorting = {
@@ -67,7 +67,6 @@ return {
             buffer = "[Buffer]",
             zsh = "[Zsh]",
             spell = "[Spell]",
-            codeium = "[AI]",
           })[entry.source.name]
           return vim_item
         end,
