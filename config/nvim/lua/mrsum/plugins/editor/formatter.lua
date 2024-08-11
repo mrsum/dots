@@ -32,6 +32,7 @@ return {
     plugin.formatters_by_ft.html = { "prettier", "prettierd" }
     plugin.formatters_by_ft.css = { "prettier", "prettierd" }
     plugin.formatters_by_ft.json = { "prettier", "prettierd" }
+    plugin.formatters_by_ft.jsonc = { "prettier", "prettierd" }
     plugin.formatters_by_ft.javascript = { "prettier", "prettierd" }
     plugin.formatters_by_ft.typescript = { "prettier", "prettierd" }
     plugin.formatters_by_ft.typescriptreact = { "prettier", "prettierd" }
