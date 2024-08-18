@@ -9,7 +9,6 @@ return {
     end
 
     plugin.setup({
-      -- model = "starling-lm",
       model = "deepseek-coder-v2:latest",
       show_model = true,
       display_mode = "split",
