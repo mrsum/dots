@@ -12,7 +12,6 @@ return {
       options = {
         theme = "auto",
       },
-
     }
     plugin.setup(opts)
   end,

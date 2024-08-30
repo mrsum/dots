@@ -13,8 +13,15 @@ return {
     "lukas-reineke/cmp-under-comparator",
   },
   config = function()
-    local cmp = require("cmp")
-    local lspkind = require("lspkind")
+    local cmp_setup, cmp = pcall(require, "cmp")
+    if not cmp_setup then
+      return
+    end
+
+    local lspkind_setup, lspkind = pcall(require, "lspkind")
+    if not lspkind_setup then
+      return
+    end
 
     cmp.setup({
       sources = {

@@ -9,7 +9,6 @@ return {
     end
 
     plugin.setup({
-      -- model = "deepseek-coder-v2:latest",
       model = "codeqwen:latest",
       show_model = true,
       display_mode = "split",

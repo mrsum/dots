@@ -12,8 +12,8 @@ return {
       win = {
         position = "right",
         size = {
-          width = 100
-        }
+          width = 100,
+        },
       },
       action_keys = {
         jump = "<cr>",

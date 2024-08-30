@@ -3,7 +3,12 @@ return {
   name = "_.mrsum.themes.catppuccin",
   priority = 1000,
   config = function()
-    require("catppuccin").setup({
+    local setup, plugin = pcall(require, "catppuccin")
+    if not setup then
+      return
+    end
+
+    plugin.setup({
       -- latte, frappe, macchiato, mocha
       flavour = "mocha",
       styles = {
