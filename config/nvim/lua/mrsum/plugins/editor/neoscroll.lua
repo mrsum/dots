@@ -10,10 +10,10 @@ return {
     -- up and down for Ctrl+
     local keymap = {
       ["<C-Up>"] = function()
-        neoscroll.ctrl_u({ duration = 150 })
+        neoscroll.ctrl_u({ duration = 100 })
       end,
       ["<C-Down>"] = function()
-        neoscroll.ctrl_d({ duration = 150 })
+        neoscroll.ctrl_d({ duration = 100 })
       end,
     }
     local modes = { "n", "v", "x" }
@@ -22,8 +22,6 @@ return {
       vim.keymap.set(modes, key, func)
     end
 
-    neoscroll.setup({
-      easing = "quadratic",
-    })
+    neoscroll.setup({})
   end,
 }
