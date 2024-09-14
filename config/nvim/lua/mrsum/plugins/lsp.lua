@@ -7,7 +7,7 @@ local lang_list = {
   "graphql",
   "jsonls",
   "yamlls",
-  "tsserver",
+  "ts_ls",
   "cssmodules_ls",
 }
 
