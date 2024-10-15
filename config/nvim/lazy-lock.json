@@ -5,16 +5,16 @@
   "_.mrsum.plugins.editor.formatter": { "branch": "master", "commit": "40d4e98fcc3e6f485f0e8924c63734bc7e305967" },
   "_.mrsum.plugins.editor.fzf": { "branch": "main", "commit": "5dec364c9dedec00dcd6d06e323d7bc7f8d6b596" },
   "_.mrsum.plugins.editor.lualine": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
-  "_.mrsum.plugins.editor.mini": { "branch": "main", "commit": "df1559e2ed7ece458e0a97a8bb9556d465d1c775" },
+  "_.mrsum.plugins.editor.mini": { "branch": "main", "commit": "d4ce7d025f9c7bb4d55ebc4fd88987651e632893" },
   "_.mrsum.plugins.editor.neoscroll": { "branch": "master", "commit": "4e0428a41c6ec191df543fc95349f6e1c598e53f" },
   "_.mrsum.plugins.editor.neotree": { "branch": "main", "commit": "a77af2e764c5ed4038d27d1c463fa49cd4794e07" },
   "_.mrsum.plugins.editor.split": { "branch": "master", "commit": "70f9e4f36082bf28b8bc1d05e2ea7c3f6aeb51ff" },
   "_.mrsum.plugins.editor.tabby": { "branch": "main", "commit": "c58d9803f9526b0c8c8b7bfd43822764e33b30ba" },
-  "_.mrsum.plugins.editor.treesitter": { "branch": "master", "commit": "39904fd016120d87010a93ccb9845c821ba2f1dd" },
+  "_.mrsum.plugins.editor.treesitter": { "branch": "master", "commit": "da926103921117cc6dc8a518bc9b949c90d1c70c" },
   "_.mrsum.plugins.editor.trouble": { "branch": "main", "commit": "254145ffd528b98eb20be894338e2d5c93fa02c2" },
   "_.mrsum.plugins.git.gitsigns": { "branch": "main", "commit": "863903631e676b33e8be2acb17512fdc1b80b4fb" },
   "_.mrsum.plugins.git.neogit": { "branch": "master", "commit": "eda716c44d3b5a424ea8604b10756c7fd8bed93a" },
-  "_.mrsum.plugins.lsp": { "branch": "master", "commit": "7be9986a4a4d7c9faddeeb9e80bafc9d3547e32e" },
+  "_.mrsum.plugins.lsp": { "branch": "master", "commit": "9b2509f17c284486497358ccea1019cc17c28af6" },
   "_.mrsum.themes.catppuccin": { "branch": "main", "commit": "7be452ee067978cdc8b2c5f3411f0c71ffa612b9" },
   "_.mrsum.themes.rose-pine": { "branch": "main", "commit": "d396005db5bbd1d4ec7772a7c96c96f4c4802328" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
@@ -36,5 +36,5 @@
   "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
   "nvim-web-devicons": { "branch": "master", "commit": "19d257cf889f79f4022163c3fbb5e08639077bd8" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
-  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "f5c1bc61e4f6b926cb8327c6b9839564f8e2f355" }
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "1618f75a6c1dab4e96a1c0fbf436da346bc2db18" }
 }
