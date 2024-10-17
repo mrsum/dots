@@ -34,7 +34,7 @@ return {
         },
         { name = "nvim_lua" },
         { name = "ultisnips" },
-        { name = "buffer", max_item_count = 15 },
+        { name = "buffer",   max_item_count = 15 },
         { name = "path" },
       },
       sorting = {
