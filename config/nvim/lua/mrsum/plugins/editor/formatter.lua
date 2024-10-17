@@ -23,9 +23,9 @@ return {
         prettier = {
           condition = function()
             return vim.loop.fs_realpath(".prettierrc") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.json") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.config.js") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.json") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.json") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.config.js") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.json") ~= nil
           end,
         },
       },
