@@ -8,7 +8,7 @@ function Fonts.setup(config)
     weight = "Medium",
   })
 
-  config.font_size = 14
+  config.font_size = 16
   config.line_height = 1.2
   config.underline_position = "-3pt"
   config.underline_thickness = "100%"

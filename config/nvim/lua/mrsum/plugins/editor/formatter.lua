@@ -23,9 +23,9 @@ return {
         prettier = {
           condition = function()
             return vim.loop.fs_realpath(".prettierrc") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.json") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.config.js") ~= nil
-              or vim.loop.fs_realpath(".prettierrc.json") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.json") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.config.js") ~= nil
+                or vim.loop.fs_realpath(".prettierrc.json") ~= nil
           end,
         },
       },
@@ -33,6 +33,7 @@ return {
 
     plugin.formatters_by_ft.lua = { "stylua" }
     plugin.formatters_by_ft.html = { "prettier" }
+    plugin.formatters_by_ft.prisma = { "prettier" }
     plugin.formatters_by_ft.css = { "prettier" }
     plugin.formatters_by_ft.json = { "prettier" }
     plugin.formatters_by_ft.jsonc = { "prettier" }
