@@ -63,25 +63,25 @@ function Keys.setup(config)
     },
 
     {
-      mods = "SHIFT|CMD",
+      mods = "SHIFT",
       key = "LeftArrow",
       action = wezterm.action.ActivatePaneDirection 'Left'
     },
 
     {
-      mods = "SHIFT|CMD",
+      mods = "SHIFT",
       key = "RightArrow",
       action = wezterm.action.ActivatePaneDirection 'Right'
     },
 
     {
-      mods = "SHIFT|CMD",
+      mods = "SHIFT",
       key = "DownArrow",
       action = wezterm.action.ActivatePaneDirection 'Down'
     },
 
     {
-      mods = "SHIFT|CMD",
+      mods = "SHIFT",
       key = "UpArrow",
       action = wezterm.action.ActivatePaneDirection 'Up'
     },
