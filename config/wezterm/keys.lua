@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-local act = wezterm.action
 
 local Keys = {}
 
@@ -52,16 +51,7 @@ function Keys.setup(config)
     split_nav("resize", "k"),
     split_nav("resize", "l"),
 
-    {
-      mods = "SHIFT|CMD",
-      key = [[|]],
-      action = wezterm.action({
-        SplitHorizontal = {
-          domain = "CurrentPaneDomain"
-        },
-      }),
-    },
-
+    -- activate panes
     {
       mods = "SHIFT",
       key = "LeftArrow",
@@ -86,12 +76,23 @@ function Keys.setup(config)
       action = wezterm.action.ActivatePaneDirection 'Up'
     },
 
+    -- splits
     {
       mods = "SHIFT|CMD",
       key = [[-]],
       action = wezterm.action({
         SplitVertical = {
           domain = "CurrentPaneDomain",
+        },
+      }),
+    },
+
+    {
+      mods = "SHIFT|CMD",
+      key = [[|]],
+      action = wezterm.action({
+        SplitHorizontal = {
+          domain = "CurrentPaneDomain"
         },
       }),
     },
