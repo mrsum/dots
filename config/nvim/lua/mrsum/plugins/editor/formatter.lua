@@ -32,6 +32,7 @@ return {
     })
 
     plugin.formatters_by_ft.lua = { "stylua" }
+    plugin.formatters_by_ft.go = { "goimports", "gofmt" }
     plugin.formatters_by_ft.html = { "prettier" }
     plugin.formatters_by_ft.prisma = { "prettier" }
     plugin.formatters_by_ft.css = { "prettier" }

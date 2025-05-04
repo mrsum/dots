@@ -33,7 +33,7 @@ local options = {
   wrap = false,
   scrolloff = 10,
   sidescrolloff = 10,
-  guifont = "FiraMono Nerd Font",
+  guifont = "JetBrainsMonoNerd Font Mono",
   laststatus = 3,
   splitkeep = "screen",
 }

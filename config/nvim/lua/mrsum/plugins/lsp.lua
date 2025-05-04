@@ -9,6 +9,7 @@ local lang_list = {
   "yamlls",
   "ts_ls",
   "cssmodules_ls",
+  "gopls"
 }
 
 -- local formatter_linter_list = {

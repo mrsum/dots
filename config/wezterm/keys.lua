@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 
 local Keys = {}
 
@@ -21,7 +22,7 @@ local direction_keys = {
 local function split_nav(resize_or_move, key)
   return {
     key = key,
-    mods = resize_or_move == "resize" and "SHIFT|ALT" or "ALT",
+    mods = resize_or_move == "resize" and "SHIFT|CMD" or "ALT",
     action = wezterm.action_callback(function(win, pane)
       if is_vi_process(pane) then
         win:perform_action({
@@ -40,6 +41,7 @@ end
 
 function Keys.setup(config)
   config.disable_default_key_bindings = false
+
   config.keys = {
     split_nav("move", "h"),
     split_nav("move", "j"),
@@ -49,26 +51,43 @@ function Keys.setup(config)
     split_nav("resize", "j"),
     split_nav("resize", "k"),
     split_nav("resize", "l"),
-    {
-      mods = "ALT",
-      key = [[\]],
-      action = wezterm.action({
-        SplitHorizontal = { domain = "CurrentPaneDomain" },
-      }),
-    },
 
     {
-      mods = "ALT|SHIFT",
+      mods = "SHIFT|CMD",
       key = [[|]],
-      action = wezterm.action.SplitPane({
-        top_level = true,
-        direction = "Right",
-        size = { Percent = 20 },
+      action = wezterm.action({
+        SplitHorizontal = {
+          domain = "CurrentPaneDomain"
+        },
       }),
     },
 
     {
-      mods = "ALT",
+      mods = "SHIFT|CMD",
+      key = "LeftArrow",
+      action = wezterm.action.ActivatePaneDirection 'Left'
+    },
+
+    {
+      mods = "SHIFT|CMD",
+      key = "RightArrow",
+      action = wezterm.action.ActivatePaneDirection 'Right'
+    },
+
+    {
+      mods = "SHIFT|CMD",
+      key = "DownArrow",
+      action = wezterm.action.ActivatePaneDirection 'Down'
+    },
+
+    {
+      mods = "SHIFT|CMD",
+      key = "UpArrow",
+      action = wezterm.action.ActivatePaneDirection 'Up'
+    },
+
+    {
+      mods = "SHIFT|CMD",
       key = [[-]],
       action = wezterm.action({
         SplitVertical = {
@@ -77,53 +96,11 @@ function Keys.setup(config)
       }),
     },
 
-    {
-      mods = "ALT|SHIFT",
-      key = [[_]],
-      action = wezterm.action.SplitPane({
-        top_level = true,
-        direction = "Down",
-        size = {
-          Percent = 10,
-        },
-      }),
-    },
-
-    {
-      key = "n",
-      mods = "ALT",
-      action = wezterm.action({
-        SpawnTab = "CurrentPaneDomain",
-      }),
-    },
-
-    {
-      key = "Q",
-      mods = "ALT",
-      action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
-    },
-
-    { key = "q", mods = "ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
-    { key = "z", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
-    { key = "F11", mods = "", action = wezterm.action.ToggleFullScreen },
-    { key = "[", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-    { key = "]", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
-    { key = "{", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(-1) },
-    { key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
-    { key = "y", mods = "ALT", action = wezterm.action.ActivateCopyMode },
+    { key = "y", mods = "ALT",        action = wezterm.action.ActivateCopyMode },
     { key = "c", mods = "CTRL|SHIFT", action = wezterm.action({ CopyTo = "Clipboard" }) },
     { key = "v", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) },
-    { key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
-    { key = "1", mods = "ALT", action = wezterm.action({ ActivateTab = 0 }) },
-    { key = "2", mods = "ALT", action = wezterm.action({ ActivateTab = 1 }) },
-    { key = "3", mods = "ALT", action = wezterm.action({ ActivateTab = 2 }) },
-    { key = "4", mods = "ALT", action = wezterm.action({ ActivateTab = 3 }) },
-    { key = "5", mods = "ALT", action = wezterm.action({ ActivateTab = 4 }) },
-    { key = "6", mods = "ALT", action = wezterm.action({ ActivateTab = 5 }) },
-    { key = "7", mods = "ALT", action = wezterm.action({ ActivateTab = 6 }) },
-    { key = "8", mods = "ALT", action = wezterm.action({ ActivateTab = 7 }) },
-    { key = "9", mods = "ALT", action = wezterm.action({ ActivateTab = 8 }) },
+    { key = "=", mods = "CTRL",       action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "CTRL",       action = wezterm.action.DecreaseFontSize },
   }
 end
 

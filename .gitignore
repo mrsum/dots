@@ -1,4 +1,3 @@
-config/tmux/plugins
 config/k9s/clusters
 # lazy-lock.json
 .DS_Store
