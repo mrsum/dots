@@ -41,9 +41,6 @@ local plugins_list = {
 
   -- lsp
   { import = "mrsum.plugins.lsp" },
-
-  -- ai
-  { import = "mrsum.plugins.ai.code" },
 }
 
 require("lazy").setup(plugins_list)

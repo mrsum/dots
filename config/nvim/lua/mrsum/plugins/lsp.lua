@@ -9,14 +9,8 @@ local lang_list = {
   "yamlls",
   "ts_ls",
   "cssmodules_ls",
-  "gopls"
+  "gopls",
 }
-
--- local formatter_linter_list = {
---   "stylua",
---   "prettier",
---   "eslint_d",
--- }
 
 return {
   "neovim/nvim-lspconfig",
@@ -32,11 +26,9 @@ return {
   },
 
   config = function()
-    local lsp = require("lspconfig")
     local mason = require("mason")
     local lspsaga = require("lspsaga")
     local mason_lsp_config = require("mason-lspconfig")
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local diagnostic = require("tiny-inline-diagnostic")
 
     vim.diagnostic.config({ virtual_text = false })
@@ -61,14 +53,6 @@ return {
       automatic_installation = true,
     })
 
-    mason_lsp_config.setup_handlers({
-      function(server_name)
-        if server_name then
-          lsp[server_name].setup({})
-        end
-      end,
-    })
-
     lspsaga.setup({
       lightbulb = {
         enable = false,
@@ -89,9 +73,7 @@ return {
     })
 
     for k, v in pairs(lang_list) do
-      lsp[v].setup({
-        capabilities = capabilities,
-      })
+      vim.lsp.enable(v)
     end
   end,
 }
