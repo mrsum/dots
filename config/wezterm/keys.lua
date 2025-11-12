@@ -55,25 +55,25 @@ function Keys.setup(config)
     {
       mods = "SHIFT",
       key = "LeftArrow",
-      action = wezterm.action.ActivatePaneDirection 'Left'
+      action = wezterm.action.ActivatePaneDirection("Left"),
     },
 
     {
       mods = "SHIFT",
       key = "RightArrow",
-      action = wezterm.action.ActivatePaneDirection 'Right'
+      action = wezterm.action.ActivatePaneDirection("Right"),
     },
 
     {
       mods = "SHIFT",
       key = "DownArrow",
-      action = wezterm.action.ActivatePaneDirection 'Down'
+      action = wezterm.action.ActivatePaneDirection("Down"),
     },
 
     {
       mods = "SHIFT",
       key = "UpArrow",
-      action = wezterm.action.ActivatePaneDirection 'Up'
+      action = wezterm.action.ActivatePaneDirection("Up"),
     },
 
     -- splits
@@ -92,16 +92,16 @@ function Keys.setup(config)
       key = [[|]],
       action = wezterm.action({
         SplitHorizontal = {
-          domain = "CurrentPaneDomain"
+          domain = "CurrentPaneDomain",
         },
       }),
     },
 
-    { key = "y", mods = "ALT",        action = wezterm.action.ActivateCopyMode },
+    { key = "y", mods = "ALT", action = wezterm.action.ActivateCopyMode },
     { key = "c", mods = "CTRL|SHIFT", action = wezterm.action({ CopyTo = "Clipboard" }) },
     { key = "v", mods = "CTRL|SHIFT", action = wezterm.action({ PasteFrom = "Clipboard" }) },
-    { key = "=", mods = "CTRL",       action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "CTRL",       action = wezterm.action.DecreaseFontSize },
+    { key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
   }
 end
 
